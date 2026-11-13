@@ -30,6 +30,11 @@ try {
   }
   const detected = await request('/', { 'Accept-Language': 'it-IT,ko-KR;q=0.9,en;q=0.7' });
   assert.ok([307, 308].includes(detected.status)); assert.equal(new URL(detected.headers.get('location'), origin).pathname, '/ko');
+  // Regional tags map to the supported scripts and variants: zh-CN to Simplified, zh-TW and zh-HK to Traditional, pt-PT to pt-BR.
+  for (const [header, expected] of [['zh-CN,zh;q=0.9,en;q=0.8', '/zh-Hans'], ['zh-TW,zh;q=0.9', '/zh-Hant'], ['zh-HK', '/zh-Hant'], ['pt-PT,pt;q=0.9', '/pt-BR'], ['fr-CA', '/fr'], ['it-IT', '/en']]) {
+    const response = await request('/', { 'Accept-Language': header });
+    assert.equal(new URL(response.headers.get('location'), origin).pathname, expected, header);
+  }
   await Promise.all(languages.map(async ({ code }) => {
     const response = await request('/' + code, { cookie: 'i18next=en' }); assert.equal(response.status, 200);
     const html = await response.text();

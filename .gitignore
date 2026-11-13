@@ -22,3 +22,4 @@ desktop/test-results/
 web/*.tsbuildinfo
 
 desktop/dist-i18n/
+.vercel
