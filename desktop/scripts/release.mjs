@@ -26,7 +26,10 @@ function run(command, args, options = {}) {
 function notarize(file, stage) {
   let upload = file;
   if (file.endsWith('.app')) { upload = path.join(stage, `${path.basename(file)}.zip`); run('ditto', ['-c', '-k', '--keepParent', file, upload]); }
-  const result = JSON.parse(run('xcrun', ['notarytool', 'submit', upload, ...plan.notary, '--wait', '--output-format', 'json'], { capture: true }));
+  // Read the submission result even when notarytool exits non-zero, so a rejection still prints Apple's log.
+  const submitted = spawnSync('xcrun', ['notarytool', 'submit', upload, ...plan.notary, '--wait', '--output-format', 'json'], { stdio: ['ignore', 'pipe', 'inherit'], encoding: 'utf8' });
+  let result;
+  try { result = JSON.parse(submitted.stdout); } catch { throw new Error(`xcrun notarytool submit failed (${submitted.status}).`); }
   if (result.status !== 'Accepted') {
     if (result.id) run('xcrun', ['notarytool', 'log', result.id, ...plan.notary]);
     throw new Error(`Notarization of ${path.basename(file)} ended with status ${result.status}.`);

@@ -29,27 +29,60 @@ Use the focused commands in [desktop/README.md](desktop/README.md) while working
 
 ## Releasing
 
-Releases are published by [.github/workflows/release.yml](.github/workflows/release.yml). Update `version` in `desktop/package.json`, commit, then push a matching tag:
+Releases are built, signed, notarized and published by [.github/workflows/release.yml](.github/workflows/release.yml) when a version tag is pushed. Nothing is uploaded by hand.
 
-```sh
-git tag v0.1.0
-git push origin v0.1.0
-```
+### Publish a version
 
-The workflow checks that the tag matches the version and that the Verify workflow passed for the same commit, runs the unit tests, builds Apple silicon and Intel apps, signs them with the Developer ID certificate and the hardened runtime, notarizes and staples the apps and their disk images, and publishes `Polaris-macOS-arm64.dmg`, `Polaris-macOS-x64.dmg` and `SHA256SUMS` as a GitHub Release. Asset names carry no version, so `releases/latest/download/…` links on the website and in the README always reach the newest release. Do not mark a release as a pre-release; GitHub's latest link skips those. Run the workflow manually to check signing and notarization without publishing.
+1. Set `version` in `desktop/package.json` (for example `0.1.1`). The website FAQ and the app read this value.
+2. Commit to `main`, push, and wait for the **Verify** workflow to pass on that commit. The release refuses commits that have not passed Verify.
+3. Tag that commit with the matching version and push the tag. Use the GitHub noreply address so an annotated tag does not record a personal email:
 
-It needs these repository secrets:
+   ```sh
+   GIT_COMMITTER_EMAIL="118744514+xmili233@users.noreply.github.com" git tag -a v0.1.1 -m "Polaris 0.1.1"
+   git push origin v0.1.1
+   ```
+
+4. Follow the **Release** run (`gh run watch`). It takes about ten minutes.
+5. Check the published release: download the assets, compare them with `SHA256SUMS`, and confirm Gatekeeper accepts them as described in [SECURITY.md](SECURITY.md#verifying-a-download).
+
+The workflow checks that the tag equals `v` plus the version and that Verify passed for the commit, runs the unit tests, builds Apple silicon and Intel apps, signs them with the Developer ID certificate and the hardened runtime, notarizes and staples the apps and their disk images, and publishes `Polaris-macOS-arm64.dmg`, `Polaris-macOS-x64.dmg` and `SHA256SUMS` with generated notes. Asset names carry no version, so `releases/latest/download/…` links on the website and in the README always reach the newest release. Do not mark a release as a pre-release or draft; GitHub's latest link skips those. To replace a mistaken tag before its run finishes, cancel the run, delete the tag locally and on GitHub, and tag again.
+
+Run the workflow manually (**Actions → Release → Run workflow**, or `gh workflow run release.yml --ref main`) to check signing and notarization without publishing. While the repository is private, release downloads work only for collaborators; the public links start working once it is public.
+
+### Credentials
+
+The workflow reads these repository secrets:
 
 | Secret | Value |
 | --- | --- |
-| `MACOS_CERTIFICATE_P12` | The Developer ID Application certificate and private key, exported as `.p12` and base64-encoded |
+| `MACOS_CERTIFICATE_P12` | The Developer ID Application certificate and its private key only, exported as `.p12` and base64-encoded |
 | `MACOS_CERTIFICATE_PASSWORD` | The `.p12` export password |
 | `MACOS_SIGN_IDENTITY` | The certificate name, such as `Developer ID Application: Name (TEAMID)` |
 | `APPLE_ID`, `APPLE_TEAM_ID`, `APPLE_APP_PASSWORD` | The Apple ID, the Developer team ID and an [app-specific password](https://support.apple.com/102654) used only for notarization |
 
 Notarization can use an App Store Connect API key instead: set `APPLE_API_KEY_P8` (the `AuthKey_….p8` contents, Developer role), `APPLE_API_KEY_ID` and `APPLE_API_ISSUER_ID`; the key wins when both are present.
 
-To build the same release locally, set `POLARIS_SIGN_IDENTITY` and one of `POLARIS_NOTARY_PROFILE` (a profile saved with `xcrun notarytool store-credentials`), the API key variables `POLARIS_NOTARY_KEY`, `POLARIS_NOTARY_KEY_ID` and `POLARIS_NOTARY_ISSUER`, or `POLARIS_NOTARY_APPLE_ID`, `POLARIS_NOTARY_TEAM_ID` and `POLARIS_NOTARY_PASSWORD`, then run `node desktop/scripts/release.mjs`. The disk images and checksums appear in the ignored `macos/release/` directory. `--no-notarize` signs without notarizing, for checking the build only; never publish its output. Credentials stay in the keychain, environment or ignored files and never enter the repository or build output.
+Set or rotate a secret from your own terminal so its value never appears in logs or chats, for example `gh secret set APPLE_APP_PASSWORD -R xmili233/polaris` and paste the value at the prompt. To rotate the app-specific password, revoke it at account.apple.com, create a new one and update the secret. When the certificate is renewed, export only the new Developer ID identity and update the three `MACOS_*` secrets. The workflow imports the certificate into a temporary keychain and deletes it and the key file when it ends.
+
+### Local releases
+
+Save notarization credentials once in your login keychain from your own terminal:
+
+```sh
+xcrun notarytool store-credentials polaris --apple-id <Apple ID> --team-id <TEAMID>
+```
+
+Then run `POLARIS_SIGN_IDENTITY="Developer ID Application: Name (TEAMID)" POLARIS_NOTARY_PROFILE=polaris node desktop/scripts/release.mjs`. The API key variables `POLARIS_NOTARY_KEY`, `POLARIS_NOTARY_KEY_ID` and `POLARIS_NOTARY_ISSUER`, or `POLARIS_NOTARY_APPLE_ID`, `POLARIS_NOTARY_TEAM_ID` and `POLARIS_NOTARY_PASSWORD`, can replace the profile. `--arch arm64` builds one architecture; `--no-notarize` signs without notarizing, for checking the build only, and its output must never be published. The disk images and checksums appear in the ignored `macos/release/` directory. Credentials stay in the keychain or environment and never enter the repository or build output.
+
+### When a release fails
+
+| Symptom | Fix |
+| --- | --- |
+| `Tag … does not match desktop/package.json version` | Tag the commit whose `desktop/package.json` carries that version. |
+| `Verify has not passed for …` | Wait for Verify on that commit, or fix it and tag the new commit. |
+| Notarization returns HTTP 403, "A required agreement is missing or has expired" | The account holder accepts the updated Apple Developer Program License Agreement at developer.apple.com/account; it can take a few minutes to apply. |
+| Notarization status is `Invalid` | The script prints Apple's notarization log; fix the reported binary or entitlement and release again. |
+| Signing cannot find the identity | Check that `MACOS_SIGN_IDENTITY` matches the certificate name and that `MACOS_CERTIFICATE_P12` holds that identity with its private key. |
 
 ## Language and data
 
