@@ -1,0 +1,28 @@
+{
+  "name": "polaris",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "pnpm --filter polaris-desktop build && pnpm --filter polaris-web build",
+    "test": "pnpm run i18n:check && pnpm --filter polaris-desktop test",
+    "dev:desktop": "pnpm --filter polaris-desktop dev",
+    "dev:web": "pnpm --filter polaris-web dev",
+    "i18n:check": "node scripts/check-i18n.mjs && i18next-cli status",
+    "i18n:extract": "i18next-cli extract",
+    "verify": "pnpm test && pnpm build && pnpm --filter polaris-desktop test:ci && pnpm --filter polaris-web test:i18n"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild",
+      "sharp"
+    ]
+  },
+  "devDependencies": {
+    "i18next-cli": "1.82.0"
+  }
+}

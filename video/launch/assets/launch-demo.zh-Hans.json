@@ -1,0 +1,508 @@
+{
+  "note": "开源发布视频中文版的虚构演示内容。由 scripts/capture-launch.mjs 按顺序写入隔离数据库。",
+  "goals": [
+    {
+      "id": "customers",
+      "symbol": "ChartNoAxesCombined",
+      "title": "找到前 10 位客户",
+      "milestone": "1 月 31 日前：10 位客户每周都在使用。",
+      "constraints": "不投付费广告。\n\n先从真实对话中学习。",
+      "strategies": [
+        {
+          "id": "conversations",
+          "title": "客户访谈",
+          "body": "访谈潜在用户，比较他们的需求。",
+          "decisions": [
+            {
+              "id": "audience",
+              "title": "先访谈哪类人？",
+              "body": "为前五场访谈选定一类人。\n\n这周可以访谈 **5 个人**。\n\n- 独立创始人回复快，能自己决定购买。\n- 小型产品团队能暴露共同决策中的卡点。\n\n先锁定一类人，答案才便于比较。",
+              "options": [
+                {
+                  "id": "solo",
+                  "label": "独立创始人",
+                  "detail": "从能自己试用并购买的人开始。"
+                },
+                {
+                  "id": "teams",
+                  "label": "小型产品团队",
+                  "detail": "了解协作流程在哪里卡住。"
+                }
+              ],
+              "recommendedOptionID": "solo"
+            },
+            {
+              "id": "problem",
+              "title": "先深挖哪个问题？",
+              "body": "访谈聚焦在一个反复出现的痛点上。",
+              "options": [
+                {
+                  "id": "track",
+                  "label": "让 Agent 不跑偏"
+                },
+                {
+                  "id": "review",
+                  "label": "审阅 Agent 的产出"
+                }
+              ],
+              "recommendedOptionID": "track"
+            },
+            {
+              "id": "invitation",
+              "title": "这封访谈邀请可以发出了吗？",
+              "body": "联系任何人之前，先确认邀请文案。",
+              "options": [
+                {
+                  "id": "send",
+                  "label": "发送邀请"
+                },
+                {
+                  "id": "revise",
+                  "label": "修改开头"
+                }
+              ],
+              "recommendedOptionID": "send"
+            },
+            {
+              "id": "feedback",
+              "title": "下一步验证哪条反馈？",
+              "body": "选出最值得追问的信号。",
+              "options": [
+                {
+                  "id": "backforth",
+                  "label": "来回沟通太多"
+                },
+                {
+                  "id": "compare",
+                  "label": "选项难以比较"
+                }
+              ],
+              "recommendedOptionID": "backforth"
+            }
+          ]
+        },
+        {
+          "id": "public",
+          "title": "公开构建",
+          "body": "通过帖子和演示检验产品表达。",
+          "decisions": [
+            {
+              "id": "angle",
+              "title": "第一篇帖子用哪个切入点？",
+              "body": "选出读者应该记住的那个观点。",
+              "options": [
+                {
+                  "id": "time",
+                  "label": "把时间留给决策"
+                },
+                {
+                  "id": "moving",
+                  "label": "让目标持续推进"
+                }
+              ],
+              "recommendedOptionID": "time"
+            },
+            {
+              "id": "demo",
+              "title": "演示展示哪个产品时刻？",
+              "body": "第一个片段只聚焦一个有用的时刻。",
+              "options": [
+                {
+                  "id": "parallel",
+                  "label": "多条策略并行"
+                },
+                {
+                  "id": "decision",
+                  "label": "一次清晰的决策"
+                }
+              ],
+              "recommendedOptionID": "decision"
+            },
+            {
+              "id": "teaser",
+              "title": "这条预告可以发布了吗？",
+              "body": "把文案和产品画面放在一起检查。",
+              "options": [
+                {
+                  "id": "publish",
+                  "label": "发布预告"
+                },
+                {
+                  "id": "refine",
+                  "label": "打磨结尾"
+                }
+              ],
+              "recommendedOptionID": "publish"
+            },
+            {
+              "id": "followup",
+              "title": "要跟进哪个读者问题？",
+              "body": "选一个话题，用具体例子回应。",
+              "options": [
+                {
+                  "id": "working",
+                  "label": "Agent 如何持续工作"
+                },
+                {
+                  "id": "handback",
+                  "label": "决策如何回到用户手中"
+                }
+              ],
+              "recommendedOptionID": "handback"
+            }
+          ]
+        },
+        {
+          "id": "offer",
+          "title": "验证方案",
+          "body": "了解人们愿意注册并付费的是什么。",
+          "decisions": [
+            {
+              "id": "promise",
+              "title": "落地页主打哪个承诺？",
+              "body": "选出最清楚的试用理由。",
+              "options": [
+                {
+                  "id": "deciding",
+                  "label": "少管理，多决策"
+                },
+                {
+                  "id": "forward",
+                  "label": "让目标持续向前"
+                }
+              ],
+              "recommendedOptionID": "deciding"
+            },
+            {
+              "id": "access",
+              "title": "早期体验包含什么？",
+              "body": "选择我们能交付好的第一个方案。",
+              "options": [
+                {
+                  "id": "guided",
+                  "label": "带引导的第一个目标"
+                },
+                {
+                  "id": "trial",
+                  "label": "自助试用"
+                }
+              ],
+              "recommendedOptionID": "guided"
+            },
+            {
+              "id": "onboarding",
+              "title": "新手引导聚焦哪类用户？",
+              "body": "第一次体验聚焦一个熟悉的场景。",
+              "options": [
+                {
+                  "id": "builders",
+                  "label": "独立开发者"
+                },
+                {
+                  "id": "teams",
+                  "label": "小型产品团队"
+                }
+              ],
+              "recommendedOptionID": "builders"
+            },
+            {
+              "id": "intent",
+              "title": "什么算作购买意向？",
+              "body": "比较结果之前，先约定信号。",
+              "options": [
+                {
+                  "id": "pilot",
+                  "label": "付费试点"
+                },
+                {
+                  "id": "call",
+                  "label": "预约的接入通话"
+                }
+              ],
+              "recommendedOptionID": "pilot"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "symbol": "GraduationCap",
+      "title": "用日语聊满 10 分钟",
+      "milestone": "6 月 30 日前：和母语者聊天，不切换回中文。",
+      "constraints": "工作日每天最多 30 分钟。\n\n多开口，少阅读。",
+      "strategies": [
+        {
+          "id": "speaking",
+          "title": "每天开口练习",
+          "body": "工作日每天出声练习，哪怕只有五分钟。",
+          "decisions": [
+            {
+              "id": "speaking-format",
+              "title": "工作日早上用哪种练习？",
+              "body": "上班前有 20 分钟。",
+              "options": [
+                {
+                  "id": "shadowing",
+                  "label": "跟读一段短播客"
+                },
+                {
+                  "id": "partner",
+                  "label": "和 AI 对话练习"
+                }
+              ],
+              "recommendedOptionID": "shadowing"
+            },
+            {
+              "id": "topics",
+              "title": "先练旅行话题还是日常话题？",
+              "body": "你的第一位对话伙伴住在大阪。",
+              "options": [
+                {
+                  "id": "everyday",
+                  "label": "日常生活"
+                },
+                {
+                  "id": "travel",
+                  "label": "旅行用语"
+                }
+              ],
+              "recommendedOptionID": "everyday"
+            }
+          ]
+        },
+        {
+          "id": "tutor",
+          "title": "每周外教课",
+          "body": "每周和外教进行一次真人对话。",
+          "decisions": [
+            {
+              "id": "tutor-pick",
+              "title": "先约哪位外教？",
+              "body": "两位下周都有空档。",
+              "options": [
+                {
+                  "id": "evenings",
+                  "label": "晚间外教，轻松聊天"
+                },
+                {
+                  "id": "weekends",
+                  "label": "周末外教，系统课程"
+                }
+              ],
+              "recommendedOptionID": "evenings"
+            }
+          ]
+        },
+        {
+          "id": "listening",
+          "title": "从喜欢的节目里学",
+          "body": "从播客和日剧里学地道表达。",
+          "decisions": [
+            {
+              "id": "commute",
+              "title": "通勤时听哪个播客？",
+              "body": "两个节目都用日常口语。",
+              "options": [
+                {
+                  "id": "slow",
+                  "label": "慢速每日播客"
+                },
+                {
+                  "id": "interviews",
+                  "label": "每周访谈节目"
+                }
+              ],
+              "recommendedOptionID": "slow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "halfmarathon",
+      "symbol": "Heart",
+      "title": "跑完第一个半程马拉松",
+      "milestone": "4 月 12 日前：完成滨江半程马拉松。",
+      "constraints": "每周最多跑四天。\n\n保护膝盖。",
+      "strategies": [
+        {
+          "id": "mileage",
+          "title": "逐步提升周跑量",
+          "body": "循序加量，每周一次长距离。",
+          "decisions": [
+            {
+              "id": "plan",
+              "title": "哪个训练计划适合你的时间？",
+              "body": "距离比赛还有 21 周。",
+              "options": [
+                {
+                  "id": "sixteen",
+                  "label": "16 周入门计划"
+                },
+                {
+                  "id": "twelve",
+                  "label": "12 周压缩计划"
+                }
+              ],
+              "recommendedOptionID": "sixteen"
+            },
+            {
+              "id": "longrun",
+              "title": "长距离放在周六还是周日？",
+              "body": "选一个大多数周都能保证的日子。",
+              "options": [
+                {
+                  "id": "saturday",
+                  "label": "周六早上"
+                },
+                {
+                  "id": "sunday",
+                  "label": "周日早上"
+                }
+              ],
+              "recommendedOptionID": "saturday"
+            }
+          ]
+        },
+        {
+          "id": "strength",
+          "title": "力量与灵活性",
+          "body": "每周两次短训练，保护膝盖。",
+          "decisions": [
+            {
+              "id": "routine",
+              "title": "先从哪套力量训练开始？",
+              "body": "两套都只需 20 分钟，不用去健身房。",
+              "options": [
+                {
+                  "id": "knees",
+                  "label": "膝关节强化"
+                },
+                {
+                  "id": "core",
+                  "label": "全身训练"
+                }
+              ],
+              "recommendedOptionID": "knees"
+            }
+          ]
+        },
+        {
+          "id": "raceday",
+          "title": "比赛日计划",
+          "body": "配速、补给和装备提前定好。",
+          "decisions": [
+            {
+              "id": "register",
+              "title": "现在按早鸟价报名吗？",
+              "body": "早鸟价周五截止。",
+              "options": [
+                {
+                  "id": "now",
+                  "label": "现在报名"
+                },
+                {
+                  "id": "wait",
+                  "label": "第 4 周再说"
+                }
+              ],
+              "recommendedOptionID": "now"
+            },
+            {
+              "id": "shoes",
+              "title": "训练穿哪双鞋？",
+              "body": "现在这双已经跑了约 500 公里。",
+              "options": [
+                {
+                  "id": "cushioned",
+                  "label": "缓震日常训练鞋"
+                },
+                {
+                  "id": "current",
+                  "label": "继续穿现在这双"
+                }
+              ],
+              "recommendedOptionID": "cushioned"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "suggestion": {
+    "id": "communities-suggestion",
+    "strategyID": "conversations",
+    "title": "要为创始人社区新增一条策略吗？",
+    "body": "我研究了 12 个独立产品找到前 10 位客户的案例。\n\n- 其中 8 个的首批客户来自创始人社区。\n- 有效做法：分享一段简短演示，请大家给反馈。\n\n在社区设一条策略，能让潜在用户主动找到我们，而不只靠一对一联系。\n\n第一步：选出三个活跃社区，起草一篇介绍帖。",
+    "options": [
+      {
+        "id": "add",
+        "label": "新增「创始人社区」",
+        "detail": "在独立创始人寻求反馈的地方分享演示。"
+      },
+      {
+        "id": "later",
+        "label": "暂不新增",
+        "detail": "保留现有三条策略。"
+      }
+    ],
+    "recommendedOptionID": "add"
+  },
+  "newStrategy": {
+    "id": "communities",
+    "goalID": "customers",
+    "title": "创始人社区",
+    "body": "在独立创始人寻求反馈的地方分享演示。",
+    "decisions": [
+      {
+        "id": "community",
+        "title": "先从哪个社区开始？",
+        "body": "有两个社区符合我们的首批用户。",
+        "options": [
+          {
+            "id": "forum",
+            "label": "独立创始人论坛"
+          },
+          {
+            "id": "meetup",
+            "label": "每周开发者聚会"
+          }
+        ],
+        "recommendedOptionID": "forum"
+      },
+      {
+        "id": "lead",
+        "title": "先发演示还是先提问？",
+        "body": "社区成员对具体内容反应更好。",
+        "options": [
+          {
+            "id": "demo",
+            "label": "先发 30 秒演示"
+          },
+          {
+            "id": "question",
+            "label": "先问他们如何做决策"
+          }
+        ],
+        "recommendedOptionID": "demo"
+      },
+      {
+        "id": "intro",
+        "title": "这篇介绍帖可以发布了吗？",
+        "body": "上线前先检查草稿。",
+        "options": [
+          {
+            "id": "publish",
+            "label": "发布帖子"
+          },
+          {
+            "id": "shorten",
+            "label": "缩短开头"
+          }
+        ],
+        "recommendedOptionID": "publish"
+      }
+    ]
+  }
+}

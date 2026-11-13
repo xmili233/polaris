@@ -1,0 +1,229 @@
+{
+  "checked_at": "2026-10-28",
+  "listening_limitation": "This model could not directly receive audio. Audio categories are CLAP hypotheses, not human audition or proof of original production technique.",
+  "cursor": {
+    "source": "https://x.com/cursor_ai/status/2115159585548021814",
+    "duration_seconds": 43.566667,
+    "audio_streams_in_mp4": 0,
+    "hls_audio_groups": 0
+  },
+  "linear": {
+    "source": "https://x.com/linear/status/1956012232950653301",
+    "duration_seconds": 34.8,
+    "audio_codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "integrated_lufs": -21.9,
+    "loudness_range_lu": 9.2,
+    "estimated_pulse_bpm": 120,
+    "prominent_onsets_seconds": [
+      7.99,
+      10,
+      12,
+      14,
+      16,
+      17.99,
+      19.99,
+      22,
+      23.98,
+      25.99,
+      28,
+      29.99
+    ]
+  },
+  "current_v1": {
+    "integrated_lufs": -25.98,
+    "loudness_range_lu": 5.3,
+    "same_click_used_for_open_select_confirm": true,
+    "click_events": 6
+  },
+  "clap_model": "Xenova/clap-htsat-unfused q8",
+  "classification": [
+    {
+      "start": 0,
+      "scores": [
+        {
+          "score": 0.7449666857719421,
+          "label": "cinematic ambient electronic music"
+        },
+        {
+          "score": 0.1441400945186615,
+          "label": "cinematic whooshes and impact sound effects"
+        },
+        {
+          "score": 0.04948273301124573,
+          "label": "electronic house dance music"
+        },
+        {
+          "score": 0.03897617757320404,
+          "label": "orchestral pizzicato string music"
+        },
+        {
+          "score": 0.008851297199726105,
+          "label": "gentle piano instrumental music"
+        },
+        {
+          "score": 0.005455612670630217,
+          "label": "acoustic guitar instrumental music"
+        },
+        {
+          "score": 0.003529670648276806,
+          "label": "rhythmic plucked synthesizer music"
+        },
+        {
+          "score": 0.0020715261343866587,
+          "label": "mechanical typing and clicking sounds without music"
+        },
+        {
+          "score": 0.0016943488735705614,
+          "label": "marimba and xylophone instrumental music"
+        },
+        {
+          "score": 0.0008318505133502185,
+          "label": "electronic beeps and digital interface sound effects"
+        }
+      ]
+    },
+    {
+      "start": 10,
+      "scores": [
+        {
+          "score": 0.752366304397583,
+          "label": "cinematic ambient electronic music"
+        },
+        {
+          "score": 0.09376431256532669,
+          "label": "electronic house dance music"
+        },
+        {
+          "score": 0.042581748217344284,
+          "label": "orchestral pizzicato string music"
+        },
+        {
+          "score": 0.041429344564676285,
+          "label": "cinematic whooshes and impact sound effects"
+        },
+        {
+          "score": 0.027242261916399002,
+          "label": "rhythmic plucked synthesizer music"
+        },
+        {
+          "score": 0.024375922977924347,
+          "label": "marimba and xylophone instrumental music"
+        },
+        {
+          "score": 0.010372727178037167,
+          "label": "gentle piano instrumental music"
+        },
+        {
+          "score": 0.0038990448229014874,
+          "label": "electronic beeps and digital interface sound effects"
+        },
+        {
+          "score": 0.0031068178359419107,
+          "label": "acoustic guitar instrumental music"
+        },
+        {
+          "score": 0.0008615367114543915,
+          "label": "mechanical typing and clicking sounds without music"
+        }
+      ]
+    },
+    {
+      "start": 20,
+      "scores": [
+        {
+          "score": 0.751093327999115,
+          "label": "cinematic ambient electronic music"
+        },
+        {
+          "score": 0.06284396350383759,
+          "label": "electronic house dance music"
+        },
+        {
+          "score": 0.05482524633407593,
+          "label": "orchestral pizzicato string music"
+        },
+        {
+          "score": 0.0524577721953392,
+          "label": "cinematic whooshes and impact sound effects"
+        },
+        {
+          "score": 0.03660894185304642,
+          "label": "rhythmic plucked synthesizer music"
+        },
+        {
+          "score": 0.01832282729446888,
+          "label": "gentle piano instrumental music"
+        },
+        {
+          "score": 0.017451230436563492,
+          "label": "marimba and xylophone instrumental music"
+        },
+        {
+          "score": 0.0032944362610578537,
+          "label": "electronic beeps and digital interface sound effects"
+        },
+        {
+          "score": 0.002760687144473195,
+          "label": "acoustic guitar instrumental music"
+        },
+        {
+          "score": 0.000341568433213979,
+          "label": "mechanical typing and clicking sounds without music"
+        }
+      ]
+    },
+    {
+      "start": 30,
+      "scores": [
+        {
+          "score": 0.715930163860321,
+          "label": "cinematic whooshes and impact sound effects"
+        },
+        {
+          "score": 0.09652410447597504,
+          "label": "cinematic ambient electronic music"
+        },
+        {
+          "score": 0.0738530084490776,
+          "label": "electronic house dance music"
+        },
+        {
+          "score": 0.04633602872490883,
+          "label": "acoustic guitar instrumental music"
+        },
+        {
+          "score": 0.030735574662685394,
+          "label": "electronic beeps and digital interface sound effects"
+        },
+        {
+          "score": 0.01957351341843605,
+          "label": "orchestral pizzicato string music"
+        },
+        {
+          "score": 0.010808004066348076,
+          "label": "gentle piano instrumental music"
+        },
+        {
+          "score": 0.0038065982516855,
+          "label": "marimba and xylophone instrumental music"
+        },
+        {
+          "score": 0.0022053406573832035,
+          "label": "rhythmic plucked synthesizer music"
+        },
+        {
+          "score": 0.00022764585446566343,
+          "label": "mechanical typing and clicking sounds without music"
+        }
+      ]
+    }
+  ],
+  "workflow_sources": [
+    "https://www.ludgi.ai/motion-graphics/glass-launch-sting",
+    "https://github.com/alchaincyf/huashu-motion",
+    "https://github.com/lemomo-ai/lemo-opuscar/blob/main/TECHNIQUE.md",
+    "https://elevenlabs.io/docs/eleven-creative/playground/sound-effects"
+  ]
+}

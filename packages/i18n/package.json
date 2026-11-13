@@ -1,0 +1,21 @@
+{
+  "name": "@polaris/i18n",
+  "license": "AGPL-3.0-only",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./locales/*": "./locales/*",
+    "./languages": {
+      "types": "./languages.d.ts",
+      "default": "./languages.js"
+    }
+  },
+  "dependencies": {
+    "i18next": "26.7.1"
+  }
+}

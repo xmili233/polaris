@@ -1,0 +1,34 @@
+name: Verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - uses: pnpm/action-setup@v6
+      - run: pnpm install --frozen-lockfile
+      - name: Show the runner's Reduce Motion setting
+        run: defaults read com.apple.universalaccess reduceMotion 2>/dev/null || echo "not set"
+      # The runner's accessibility settings must not decide whether animated UI renders in tests.
+      - run: pnpm verify
+        env:
+          POLARIS_TEST_REDUCED_MOTION: '0'

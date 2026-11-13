@@ -1,0 +1,366 @@
+[
+  {
+    "kind": "goal",
+    "action": "create",
+    "input": {
+      "id": "first-customers",
+      "title": "Find my first 10 customers",
+      "milestone": "Learn from real conversations. No paid ads.",
+      "requestID": "launch-parallel-v2-0"
+    }
+  },
+  {
+    "kind": "policy",
+    "action": "create",
+    "input": {
+      "id": "customer-learning",
+      "goalID": "first-customers",
+      "statement": "Learn from real customers before spending on ads.",
+      "origin": "Fictional video demo",
+      "requestID": "launch-parallel-v2-1"
+    }
+  },
+  {
+    "kind": "strategy",
+    "action": "create",
+    "input": {
+      "id": "conversations",
+      "schedule": { "rule": { "frequency": "once", "at": "2099-01-01T09:00:00Z" } },
+      "title": "Customer conversations",
+      "body": "Learn directly from potential customers.",
+      "origin": "Fictional video demo",
+      "requestID": "launch-parallel-v2-2",
+      "goalID": "first-customers"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "audience",
+      "strategyID": "conversations",
+      "title": "Who should we interview first?",
+      "summary": "Pick one audience for our first five conversations.",
+      "background": "We can interview five people this week.\n\nSolo founders decide quickly. Small teams reveal collaboration needs.\n\nStart with one audience.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Solo founders",
+          "detail": "Start with people who can try and buy on their own."
+        },
+        {
+          "id": "b",
+          "label": "Small product teams",
+          "detail": "Explore shared workflows and team decision-making."
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-3"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "problem",
+      "strategyID": "conversations",
+      "title": "Which problem should we explore first?",
+      "summary": "Focus the interviews on one recurring pain.",
+      "background": "Focus the interviews on one recurring pain.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Keeping agents on track"
+        },
+        {
+          "id": "b",
+          "label": "Reviewing agent output"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-4"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "invitation",
+      "strategyID": "conversations",
+      "title": "Is this interview invitation ready to send?",
+      "summary": "Review the message before we contact anyone.",
+      "background": "Review the message before we contact anyone.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Send this invitation"
+        },
+        {
+          "id": "b",
+          "label": "Revise the opening"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-5"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "feedback",
+      "strategyID": "conversations",
+      "title": "Which feedback should we validate next?",
+      "summary": "Choose the strongest signal for a follow-up.",
+      "background": "Choose the strongest signal for a follow-up.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Too much back-and-forth"
+        },
+        {
+          "id": "b",
+          "label": "Hard to compare choices"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-6"
+    }
+  },
+  {
+    "kind": "strategy",
+    "action": "create",
+    "input": {
+      "id": "public",
+      "schedule": { "rule": { "frequency": "once", "at": "2099-01-01T09:00:00Z" } },
+      "title": "Build in public",
+      "body": "Test the message through posts and demos.",
+      "origin": "Fictional video demo",
+      "requestID": "launch-parallel-v2-7",
+      "goalID": "first-customers"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "angle",
+      "strategyID": "public",
+      "title": "Which angle should our first post lead with?",
+      "summary": "Choose the idea readers should remember.",
+      "background": "Lead with one clear promise.\n\nDecision-led messaging explains the human role. Progress-led messaging shows what happens between check-ins.",
+      "options": [
+        {
+          "id": "a",
+          "label": "More time for decisions",
+          "detail": "Lead with the decisions people want to spend time on."
+        },
+        {
+          "id": "b",
+          "label": "Goals that keep moving",
+          "detail": "Lead with progress that continues between check-ins."
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-8"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "demo",
+      "strategyID": "public",
+      "title": "Which product moment should the demo show?",
+      "summary": "Keep the first clip focused on one useful moment.",
+      "background": "Keep the first clip focused on one useful moment.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Three strategies in parallel"
+        },
+        {
+          "id": "b",
+          "label": "One clear decision"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-9"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "teaser",
+      "strategyID": "public",
+      "title": "Is this launch teaser ready to publish?",
+      "summary": "Review the draft and product footage together.",
+      "background": "Review the draft and product footage together.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Publish the teaser"
+        },
+        {
+          "id": "b",
+          "label": "Refine the ending"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-10"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "followup",
+      "strategyID": "public",
+      "title": "Which reader question needs a follow-up?",
+      "summary": "Pick the next topic for a concrete product example.",
+      "background": "Pick the next topic for a concrete product example.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "How agents keep working"
+        },
+        {
+          "id": "b",
+          "label": "How decisions are handed back"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-11"
+    }
+  },
+  {
+    "kind": "strategy",
+    "action": "create",
+    "input": {
+      "id": "offer",
+      "schedule": { "rule": { "frequency": "once", "at": "2099-01-01T09:00:00Z" } },
+      "title": "Validate the offer",
+      "body": "Learn what people would sign up and pay for.",
+      "origin": "Fictional video demo",
+      "requestID": "launch-parallel-v2-12",
+      "goalID": "first-customers"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "promise",
+      "strategyID": "offer",
+      "title": "Which promise should lead the landing page?",
+      "summary": "Choose the clearest reason to try Polaris.",
+      "background": "Choose the clearest reason to try Polaris.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Less managing, more deciding"
+        },
+        {
+          "id": "b",
+          "label": "Your goals, moving forward"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-13"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "access",
+      "strategyID": "offer",
+      "title": "What should early access include?",
+      "summary": "Choose the first offer we can deliver well.",
+      "background": "Choose the first offer we can deliver well.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "A guided first goal"
+        },
+        {
+          "id": "b",
+          "label": "A self-serve trial"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-14"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "onboarding",
+      "strategyID": "offer",
+      "title": "Who should onboarding focus on?",
+      "summary": "Focus the first experience on one familiar use case.",
+      "background": "Focus the first experience on one familiar use case.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "Independent builders"
+        },
+        {
+          "id": "b",
+          "label": "Small product teams"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-15"
+    }
+  },
+  {
+    "kind": "decision",
+    "action": "submit",
+    "input": {
+      "id": "intent",
+      "strategyID": "offer",
+      "title": "What should count as buying intent?",
+      "summary": "Agree on the signal before comparing results.",
+      "background": "Agree on the signal before comparing results.\n\nThis is an illustrative decision for the product video. Both options are plausible; pick the trade-off that fits this goal.",
+      "options": [
+        {
+          "id": "a",
+          "label": "A paid pilot"
+        },
+        {
+          "id": "b",
+          "label": "A scheduled setup call"
+        }
+      ],
+      "recommendedOptionID": "a",
+      "recommendationReason": "A narrower first step makes the result easier to learn from.",
+      "agent": "Agent",
+      "requestID": "launch-parallel-v3-16"
+    }
+  }
+]

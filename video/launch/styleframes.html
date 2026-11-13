@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="google" content="notranslate">
+  <title>Polaris launch film — composition draft</title>
+  <style>
+    :root { --canvas:#fff; --ink:#202124; --secondary:#6a6f78; --surface:#f6f7f9; --accent:#0866ff; }
+    * { box-sizing:border-box; }
+    read-frog, read-frog-selection, .read-frog-translated-content-wrapper { display:none !important; }
+    body { margin:0; background:#e9ebee; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif; }
+    main { display:grid; gap:64px; padding:48px 0; }
+    figure { margin:0; }
+    figcaption { width:1920px; margin:0 auto 14px; padding:0 4px; color:var(--secondary); font-size:22px; }
+    .frame { position:relative; width:1920px; height:1080px; margin:auto; overflow:hidden; background:var(--canvas); }
+    .brand { position:absolute; left:140px; top:96px; display:flex; align-items:center; gap:18px; font-size:36px; font-weight:600; letter-spacing:-1.2px; }
+    .brand img { width:58px; height:58px; border-radius:12px; }
+    .opening h1 { position:absolute; margin:0; left:140px; top:360px; font-size:102px; font-weight:500; line-height:1.2; letter-spacing:-5px; }
+    .opening h1 span { display:block; }
+    .opening h1 span:last-child { margin-top:20px; color:var(--accent); }
+    .parallel .product { position:absolute; left:95px; top:3px; width:1730px; height:auto; }
+    .decision { background:var(--surface); }
+    .decision h2 { position:absolute; left:140px; top:390px; margin:0; font-size:68px; line-height:1.08; letter-spacing:-3px; font-weight:500; }
+    .decision h2 span { display:block; }
+    .decision h2 .accent { color:var(--accent); margin-top:20px; }
+    .decision .product { position:absolute; left:655px; top:133px; width:1190px; height:auto; border-radius:22px; box-shadow:0 24px 90px #20212415; }
+    .ending .lockup { position:absolute; left:0; right:0; top:366px; display:flex; justify-content:center; align-items:center; gap:44px; }
+    .ending .lockup img { width:178px; height:178px; border-radius:36px; }
+    .ending .lockup strong { font-size:132px; letter-spacing:-6px; font-weight:500; }
+    .ending p { position:absolute; top:641px; left:0; right:0; margin:0; text-align:center; font-size:38px; color:var(--secondary); letter-spacing:-.6px; }
+    body.single main { padding:0; display:block; }
+    body.single figure { display:none; }
+    body.single figure.selected { display:block; }
+    body.single figcaption { display:none; }
+  </style>
+</head>
+<body>
+  <main>
+    <figure id="opening">
+      <figcaption>01 · Opening · 0–5s</figcaption>
+      <section class="frame opening" aria-label="Opening composition">
+        <div class="brand"><img src="assets/app-icon.png" alt=""><span>Polaris</span></div>
+        <h1><span>Your agents do the legwork.</span><span>You make the calls.</span></h1>
+      </section>
+    </figure>
+    <figure id="parallel">
+      <figcaption>02 · One goal, parallel strategies · Real app with fictional demo content</figcaption>
+      <section class="frame parallel" aria-label="One goal with three parallel strategies and twelve pending decisions in the real Polaris app">
+        <img class="product" src="previews/parallel-board.png" alt="Find my first 10 customers: Customer conversations, Build in public, and Validate the offer each contain four concrete decisions">
+      </section>
+    </figure>
+    <figure id="decision">
+      <figcaption>03 · Decision close-up · Composition placeholder; final footage will use English demo content</figcaption>
+      <section class="frame decision" aria-label="Decision close-up using an existing Chinese demo screenshot as a placeholder">
+        <h2><span>The context.</span><span>The options.</span><span class="accent">Your call.</span></h2>
+        <img class="product" src="assets/decision-placeholder.png" alt="The real Polaris decision dialog, with background on the left and choices on the right">
+      </section>
+    </figure>
+    <figure id="ending">
+      <figcaption>04 · End card · 40–45s</figcaption>
+      <section class="frame ending" aria-label="End card composition">
+        <div class="lockup"><img src="assets/app-icon.png" alt=""><strong>Polaris</strong></div>
+        <p>Follow for the launch.</p>
+      </section>
+    </figure>
+  </main>
+  <script>
+    const selected = new URLSearchParams(location.search).get('frame');
+    if (selected && ['opening','parallel','decision','ending'].includes(selected)) {
+      document.body.classList.add('single');
+      document.getElementById(selected).classList.add('selected');
+    }
+  </script>
+</body>
+</html>

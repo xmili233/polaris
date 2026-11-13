@@ -1,0 +1,5 @@
+[
+  { "id": "chatgpt-codex", "label": "Codex CLI", "minimum": "0.162.1" },
+  { "id": "claude-code", "label": "Claude Code", "minimum": "2.1.312" },
+  { "id": "gemini-cli", "label": "Gemini CLI", "line": "0.66" }
+]

@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+launcher=$0
+while [ -L "$launcher" ]; do
+  link=$(readlink "$launcher")
+  case "$link" in /*) launcher=$link ;; *) launcher=$(dirname "$launcher")/$link ;; esac
+done
+directory=$(CDPATH= cd -- "$(dirname -- "$launcher")" && pwd)
+exec node --no-warnings "$directory/../dist-service/host.js" "$@"

@@ -1,0 +1,14 @@
+{
+  "voice": "Aoede",
+  "duration_seconds": 40,
+  "output": "narration-v3",
+  "takes": [
+    {"id":"intro","at":0.3,"until":4.9,"text":"Your agents work for hours. Decisions get buried in the text."},
+    {"id":"cards","at":5.0,"until":8.4,"text":"In Polaris, the work stays with agents. Decisions come to you."},
+    {"id":"decide","at":8.6,"until":14.8,"text":"One question, the context, clear options. Make the call."},
+    {"id":"goals","at":15.2,"until":21.8,"text":"Any goal, from a product to a language to a race, with strategies running at once."},
+    {"id":"strategy","at":22.3,"until":32.6,"text":"Agents study what worked for goals like yours, and map out new strategy paths. Say yes, and they start the work."},
+    {"id":"focus","at":33.0,"until":35.9,"text":"You focus on goals and strategy."},
+    {"id":"end","at":36.2,"until":39.7,"text":"Polaris. Open source, with your data on your Mac."}
+  ]
+}

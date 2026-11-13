@@ -1,0 +1,362 @@
+[
+  {
+    "color": "--ink",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-pebble",
+      "name": "Pebble",
+      "body": {
+        "path": "M50 12C73 12 88 29 88 51C88 73 72 88 49 88C26 88 12 72 12 51C12 28 28 12 50 12Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 48,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-blue",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-squircle",
+      "name": "Squircle",
+      "body": {
+        "path": "M32 14H68C81 14 88 21 88 34V66C88 80 80 88 66 88H34C20 88 12 80 12 66V34C12 21 19 14 32 14Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 47,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-teal",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-drop",
+      "name": "Drop",
+      "body": {
+        "path": "M50 10C55 10 60 23 69 33C79 45 87 55 87 66C87 81 73 90 50 90C27 90 13 81 13 66C13 55 21 45 31 33C40 23 45 10 50 10Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 60,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-brown",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-bean",
+      "name": "Bean",
+      "body": {
+        "path": "M58 12C77 12 89 28 88 46C88 63 75 69 69 77C64 85 54 90 41 88C22 86 11 71 12 53C13 35 28 33 34 24C40 16 47 12 58 12Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 48,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-blue",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-cloud",
+      "name": "Cloud",
+      "body": {
+        "path": "M25 32C23 19 38 12 48 23C58 10 77 16 77 31C90 33 94 48 85 58C93 74 80 87 65 82C57 94 39 92 33 82C17 89 7 74 15 60C5 46 11 34 25 32Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 51,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-orange",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-star",
+      "name": "Star",
+      "body": {
+        "path": "M50 10C59 10 61 24 69 31C76 38 90 40 90 50C90 60 76 62 69 69C61 76 59 90 50 90C41 90 39 76 31 69C24 62 10 60 10 50C10 40 24 38 31 31C39 24 41 10 50 10Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 49,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-orange",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-pudding",
+      "name": "Pudding",
+      "body": {
+        "path": "M37 15H63C73 15 77 21 79 31L89 73C91 83 83 88 72 88H28C17 88 9 83 11 73L21 31C23 21 27 15 37 15Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 51,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-teal",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-leaf",
+      "name": "Leaf",
+      "body": {
+        "path": "M22 22C36 11 67 12 83 16C87 17 89 20 88 24C88 47 83 72 65 83C46 95 22 86 14 68C7 52 10 33 22 22Z"
+      },
+      "eyes": {
+        "x": 48,
+        "y": 49,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-red",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-arch",
+      "name": "Arch",
+      "body": {
+        "path": "M50 12C73 12 87 28 87 51V76C87 84 83 89 76 89C69 89 68 80 60 80H40C32 80 31 89 24 89C17 89 13 84 13 76V51C13 28 27 12 50 12Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 47,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--ink",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-cat",
+      "name": "Cat",
+      "body": {
+        "path": "M16 20C16 12 20 10 27 15L39 25C46 23 54 23 61 25L73 15C80 10 84 12 84 20L84 44C91 57 89 73 79 81C66 92 34 92 21 81C11 73 9 57 16 44Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 54,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-brown",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-shell",
+      "name": "Shell",
+      "body": {
+        "path": "M19 39C17 25 28 17 40 23C45 10 60 10 66 23C79 16 90 27 85 40C95 48 91 62 82 67L67 83C58 92 42 92 33 83L18 67C8 61 5 47 19 39Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 48,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-red",
+    "depth": 6,
+    "definition": {
+      "version": 1,
+      "id": "polaris-peak",
+      "name": "Peak",
+      "body": {
+        "path": "M50 12C57 12 62 22 68 32L88 66C96 81 85 88 72 88H28C15 88 4 81 12 66L32 32C38 22 43 12 50 12Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 59,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-orange",
+    "depth": 8,
+    "definition": {
+      "version": 1,
+      "id": "polaris-book",
+      "name": "Book",
+      "body": {
+        "path": "M14 19C28 14 41 18 50 25C59 18 72 14 86 19V77C71 73 60 78 50 87C40 78 29 73 14 77Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 49,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-blue",
+    "depth": 8,
+    "definition": {
+      "version": 1,
+      "id": "polaris-mug",
+      "name": "Mug",
+      "body": {
+        "path": "M24 23H62C67 23 70 27 70 32V69C70 81 62 88 50 88H34C22 88 14 81 14 69V33C14 27 18 23 24 23ZM67 35C81 31 91 40 91 52C91 66 81 74 67 70ZM70 44V61C78 63 83 58 83 52C83 46 78 42 70 44Z"
+      },
+      "eyes": {
+        "x": 42,
+        "y": 52,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-teal",
+    "depth": 8,
+    "definition": {
+      "version": 1,
+      "id": "polaris-plant",
+      "name": "Plant",
+      "body": {
+        "path": "M47 25H53V52H47ZM49 36C33 38 20 29 17 16C29 12 42 20 49 31ZM51 29C57 15 72 10 84 14C82 28 67 37 51 34ZM22 47H78L74 78C73 86 68 90 60 90H40C32 90 27 86 26 78Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 66,
+        "spacing": 16,
+        "scale": 1.05
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-red",
+    "depth": 8,
+    "definition": {
+      "version": 1,
+      "id": "polaris-mushroom",
+      "name": "Mushroom",
+      "body": {
+        "path": "M27 46H73V77C73 87 67 91 57 91H43C33 91 27 87 27 77ZM12 43C17 23 32 11 50 11C68 11 83 23 88 43C90 49 85 54 78 54H22C15 54 10 49 12 43Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 68,
+        "spacing": 16,
+        "scale": 1.05
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-blue",
+    "depth": 5,
+    "definition": {
+      "version": 1,
+      "id": "polaris-antenna",
+      "name": "Antenna",
+      "body": {
+        "path": "M47 10H53C56 10 58 12 58 15C58 18 55 20 53 20V29H72C78 29 82 33 82 39V45H88C91 45 92 48 92 51V63C92 66 91 69 88 69H82V77C82 85 77 89 69 89H31C23 89 18 85 18 77V69H12C9 69 8 66 8 63V51C8 48 9 45 12 45H18V39C18 33 22 29 28 29H47V20C45 20 42 18 42 15C42 12 44 10 47 10Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 55,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-orange",
+    "depth": 5,
+    "definition": {
+      "version": 1,
+      "id": "polaris-long-ears",
+      "name": "Long Ears",
+      "body": {
+        "path": "M28 35V16C28 11 31 9 35 9C39 9 42 11 42 16V35H58V16C58 11 61 9 65 9C69 9 72 11 72 16V35H76C82 35 86 40 86 47V75C86 85 80 90 70 90H30C20 90 14 85 14 75V47C14 40 18 35 24 35Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 58,
+        "spacing": 16,
+        "scale": 1.15
+      }
+    }
+  },
+  {
+    "color": "--ink",
+    "depth": 5,
+    "definition": {
+      "version": 1,
+      "id": "polaris-tracks",
+      "name": "Tracks",
+      "body": {
+        "path": "M33 14H67C74 14 78 18 78 25V58H80C88 58 92 65 92 74V78C92 87 86 91 77 91H23C14 91 8 87 8 78V74C8 65 12 58 20 58H22V25C22 18 26 14 33 14Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 41,
+        "spacing": 16,
+        "scale": 1.1
+      }
+    }
+  },
+  {
+    "color": "--work-avatar-teal",
+    "depth": 5,
+    "definition": {
+      "version": 1,
+      "id": "polaris-saucer",
+      "name": "Saucer",
+      "body": {
+        "path": "M25 42C25 21 35 11 50 11C65 11 75 21 75 42ZM13 42C23 33 77 33 87 42C93 47 93 63 87 70C78 82 22 82 13 70C7 63 7 47 13 42Z"
+      },
+      "eyes": {
+        "x": 50,
+        "y": 55,
+        "spacing": 16,
+        "scale": 1.15
+      }
+    }
+  }
+]

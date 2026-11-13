@@ -1,0 +1,7 @@
+node_modules/
+.capture/
+.remotion/
+out/
+previews/
+__pycache__/
+public/v3/*/pieces/

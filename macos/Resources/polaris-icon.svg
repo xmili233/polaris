@@ -1,0 +1,58 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1024"
+  height="1024"
+  viewBox="0 0 1024 1024"
+>
+  <defs>
+    <linearGradient id="surface" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#f3f4f6" />
+    </linearGradient>
+    <filter
+      id="shadow"
+      filterUnits="userSpaceOnUse"
+      x="32"
+      y="32"
+      width="960"
+      height="960"
+      color-interpolation-filters="sRGB"
+    >
+      <feDropShadow
+        dx="0"
+        dy="16"
+        stdDeviation="18"
+        flood-color="#000000"
+        flood-opacity="0.28"
+      />
+    </filter>
+  </defs>
+
+  <rect
+    x="96"
+    y="80"
+    width="832"
+    height="832"
+    rx="188"
+    fill="url(#surface)"
+    filter="url(#shadow)"
+  />
+  <rect
+    x="97"
+    y="81"
+    width="830"
+    height="830"
+    rx="187"
+    fill="none"
+    stroke="#d1d5db"
+    stroke-width="2"
+  />
+  <image
+    href="polaris-mark.svg"
+    x="182"
+    y="166"
+    width="660"
+    height="660"
+    preserveAspectRatio="xMidYMid meet"
+  />
+</svg>

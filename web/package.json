@@ -1,0 +1,30 @@
+{
+  "name": "polaris-web",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "check": "tsc --noEmit",
+    "test:i18n": "node tests/i18n.e2e.mjs"
+  },
+  "dependencies": {
+    "@polaris/i18n": "workspace:*",
+    "i18next": "26.7.1",
+    "lucide-react": "1.67.0",
+    "next": "16.4.3",
+    "next-i18next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-i18next": "17.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^5.9.3"
+  },
+  "type": "module"
+}

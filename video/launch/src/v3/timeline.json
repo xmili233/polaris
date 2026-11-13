@@ -1,0 +1,21 @@
+{
+  "note": "Single timing source for the launch film and scripts/make-launch-v3-audio.py. Frames at 30 fps on a 120 BPM grid: a beat is 15 frames, a bar 60. Scene cues are local to the scene start.",
+  "fps": 30,
+  "bpm": 120,
+  "frames": 1200,
+  "scenes": {
+    "work": {"from": 0, "duration": 240},
+    "decide": {"from": 240, "duration": 210},
+    "goals": {"from": 450, "duration": 210},
+    "strategy": {"from": 660, "duration": 330},
+    "focus": {"from": 990, "duration": 96},
+    "end": {"from": 1080, "duration": 120}
+  },
+  "work": {"read": 54, "scrollEnd": 120, "pullStart": 90, "pullEnd": 144, "lift": 150, "collapse": 156, "collapseGap": 2, "collapseFor": 24, "flyStart": 150, "flyGap": 3.75, "fly": 30},
+  "decide": {"focus": 0, "open": 15, "read": 30, "options": 75, "select": 120, "button": 135, "confirm": 150},
+  "goals": {"exit": 165, "arrivals": [60, 90], "push": [45, 165]},
+  "strategy": {"arrive": 15, "focus": 30, "open": 45, "read": 60, "options": 120, "select": 135, "button": 150, "confirm": 165,
+    "laneIn": 180, "prepare": 195, "firstCard": 224, "cardGap": 15, "drop": 16, "settle": 275, "agentDone": 300},
+  "focus": {"pull": 36, "dim": 12},
+  "captions": [[15, 140], [180, 262], [270, 445], [465, 655], [675, 840], [846, 985], [996, 1076]]
+}

@@ -1,0 +1,13 @@
+{
+  "voice": "Aoede",
+  "duration_seconds": 45,
+  "output": "narration",
+  "takes": [
+    {"id":"intro","at":0.2,"until":4.2,"text":"Your agents do the legwork. You make the calls."},
+    {"id":"parallel","at":4.5,"until":15.5,"text":"Set a goal and your guidelines. Multiple strategies move forward in parallel, bringing back the decisions that need you."},
+    {"id":"context","at":16.5,"until":23.3,"text":"The context. The options. A recommendation. Ready for your review."},
+    {"id":"choice","at":24,"until":28.7,"text":"Compare the options. Then make the call."},
+    {"id":"next","at":30,"until":39.5,"text":"Move to the next strategy. Make another decision. Keep your goal moving."},
+    {"id":"ending","at":41,"until":44.8,"text":"Polaris. More time for decisions."}
+  ]
+}

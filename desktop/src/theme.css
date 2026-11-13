@@ -1,0 +1,165 @@
+/* R-D40: active visual tokens, transferred without a redesign from Theme.swift. */
+:root {
+  color-scheme: light;
+  --error: #b43b30;
+  --canvas: #fff; --background: #fff; --on-ink: #fff; --on-color: #fff; --shadow-rgb: 32 33 36; --ink: #202124; --secondary: #6a6f78; --surface: #f6f7f9;
+  --hover: #eceef1; --border: #e4e6eb; --border-strong: #d3d6dc; --accent: #0866ff;
+  --badge: #ff3b30; --option-selected: #f6f9ff; --option-border: #d2d7df;
+  --option-hover-border: #aeb7c4; --option-selected-border: rgb(8 102 255 / 65%); --scrim: rgb(32 33 36 / 20%);
+  --xs: 4px; --s: 8px; --m: 12px; --l: 16px; --xl: 24px; --page: 28px;
+  --radius-control: 8px; --radius-option: 10px; --radius-card: 12px; --radius-lane: 16px;
+  --rail: 76px; --goal-button: 44px; --lane: 296px;
+  --modal-layer-z: 100; --modal-width: 880px; --modal-height: 580px; --modal-margin: 48px; --decision-panel: 320px;
+  --title-bar: 52px; --control-height: 30px;
+  --goal-title: 22px; --goal-subtitle: 13px; --lane-title: 15px; --lane-count: 13px; --lane-subtitle: 12px;
+  --card-title: 14px; --card-summary: 12.5px; --meta: 11.5px; --modal-title: 20px; --body: 14px;
+  --excerpt: 13.5px; --option-number: 11px; --option-title: 13.5px; --option-detail: 12.5px;
+  --section-label: 12px; --button: 13px; --badge-font: 10px;
+  --shortcut-font: 'Lucida Grande', sans-serif;
+  --goal-symbol: 17px; --empty-symbol: 24px;
+  --decision-inset: 20px; --option-min-height: 42px; --option-vertical-inset: 10px;
+  --option-number-width: 14px; --check-size: 12px; --option-title-line-height: calc(var(--option-title) * 1.25);
+  --press: 140ms; --state: 220ms; --layout: 420ms; --expand: 460ms; --collapse: 360ms;
+  --reveal: 240ms; --reveal-delay: 100ms; --card-fade: 120ms; --panel: 320ms;
+  --spring: cubic-bezier(.2,.9,.25,1.035); --collapse-curve: cubic-bezier(.2,.8,.25,1);
+}
+/* R-D46: WeStud-inspired light sign-in with static geometric characters. */
+:root {
+}
+/* R-D47: compact account entry and anchored popover. */
+:root {
+  --settings-button: 44px; --menu-row: 32px; --menu-inset: 6px; --popover-border: #e8e8eb;
+  --popover-shadow: 0 3px 12px rgb(32 33 36 / 8%);
+}
+/* R-D88–R-D91: settings dialog, compact (R-D90): small type, tight rows, a white page on the grey dialog. */
+:root {
+  --language-options-width: 252px; --language-option-height: 32px; --settings-search-icon: 14px;
+  --settings-width: 560px; --settings-height: 360px; --settings-nav: 148px; --settings-nav-row: 28px; --settings-font: 12.5px;
+  --settings-row: 52px; --settings-select: 26px;
+  --settings-close: 24px; --settings-avatar: 30px; --settings-inset: 6px;
+  --settings-shadow: 0 24px 64px rgb(32 33 36 / 18%), 0 0 0 .5px rgb(32 33 36 / 10%);
+}
+/* R-D66 / R-D68: ChatGPT desktop activity spacing and compact composer, scoped to the Agent. */
+:root {
+  --agent-width: 736px; --agent-header: 48px; --agent-thread-min: 240px; --agent-thread-max: 480px; --agent-input-max: 160px;
+  --agent-composer-height: 106px; --agent-text-min: 40px; --agent-attachments-max: 112px; --agent-send: 32px; --agent-icon: 18px; --agent-activity-icon: 16px; --agent-action: 32px;
+  --agent-radius: 22px; --agent-panel-radius: 16px; --agent-bubble-radius: 16px; --agent-user-width: 80%;
+  --agent-inset: 16px; --agent-reading-inset: 24px; --agent-full-reading-inset: 0px; --agent-thread-bottom-space: 40px; --agent-message-gap: 24px; --agent-control-gap: 8px;
+  --agent-bubble-inset: 12px; --agent-input-trailing: 12px; --agent-input-padding: 12px; --agent-input-inset: 0px; --agent-input-line: 24px; --agent-tool-row: 24px;
+  --agent-model-width: 220px; --agent-model-menu-width: 400px; --agent-model-menu-height: 360px; --agent-model-details-width: 168px; --agent-model-head-height: 40px; --agent-model-row-height: 28px; --agent-model-group-height: 24px; --agent-model-bolt: 12px; --agent-model-icon: 14px;
+  --agent-font: 14px; --agent-line-height: 1.7; --agent-label: 12px; --agent-welcome: 24px;
+  --agent-ink: #0d0d0d; --agent-muted: #6d6d6d; --agent-border: #e4e4e7; --agent-hover: #f4f4f5;
+  --agent-surface: #fff; --agent-message-surface: #f4f4f4; --agent-send-color: #0d0d0d; --agent-send-radius: 50%;
+  --agent-composer-border: #ededed; --agent-placeholder: #767676; --agent-send-disabled: #e5e5e5;
+  --agent-error: #ef4444; --agent-error-surface: #fff7f7; --agent-code: #f4f4f5;
+  --agent-tool-gap: 6px; --agent-tool-icon-gap: 2px; --agent-tool-disclosure-gap: 4px; --agent-tool-disclosure: 14px;
+  --agent-tool-detail-indent: 24px; --agent-tool-radius: 6px; --agent-tool-list-gap: 4px;
+  --agent-tool-font: 13px; --agent-tool-line-height: 20px; --agent-answer-gap: 16px;
+  --agent-work-divider-gap: 4px;
+  --agent-command-radius: 20px; --agent-command-row-radius: 16px; --agent-command-row-height: 32px;
+  --agent-command-padding: 4px; --agent-command-inset: 8px; --agent-command-gap: 8px;
+  --agent-command-icon: 16px; --agent-command-line: 20px;
+  --agent-command-border: #ececec; --agent-command-selected: #f1f2f2; --agent-command-ink: #333;
+  --agent-command-description: color-mix(in srgb, var(--agent-command-ink) 50%, transparent);
+  --agent-tool-color: color-mix(in srgb, var(--agent-ink) 60%, transparent);
+  --agent-command-max-height: 224px; --agent-tool-detail-max: 384px;
+  --agent-paragraph-gap: 12px; --agent-stream-fade: 150ms; --agent-stream-adaptive-fade: 700ms;
+  --agent-status-enter: 300ms; --agent-shimmer-duration: 2000ms;
+  --agent-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+  --agent-panel-shadow: 0 8px 24px rgb(32 33 36 / 12%);
+  --agent-scroll-shadow: 0 2px 6px rgb(0 0 0 / 7%); --agent-spin: 1000ms;
+}
+/* R-D61: anchored composer; the panel opens out of its outline and the content fades in after the surface. */
+:root {
+  --agent-close: 200ms;
+  --agent-ease: cubic-bezier(.22,1,.36,1); --agent-bottom: 12px; --agent-bar-shadow: 0 4px 16px rgb(0 0 0 / 8%); --agent-unread: 6px;
+}
+
+/* R-D180: visible constraint chips reuse the original principle row dimensions. */
+:root {
+  --constraint-chip-height: 26px; --constraint-chip-max: 240px; --constraint-chip-gap: 6px; --constraint-label-gap: 10px;
+  --constraint-row-gap: 14px; --constraint-chip-padding: 10px;
+  --constraint-dialog-width: 560px; --constraint-menu-width: 320px; --constraint-menu-height: 320px; --constraint-reading-inset: 32px;
+}
+/* R-D76 / R-D77 / R-D78: first-run connect page and full-window Agent. */
+:root {
+  --connect-width: 336px; --connect-mark: 44px; --connect-gap: 32px; --connect-row: 24px; --connect-row-gap: 14px;
+  --connect-subtitle: 13.5px; --connect-button: 40px; --connect-spinner: 14px; --connect-check: 16px; --connect-code: 12px;
+  --connect-wait-delay: 300ms;
+  --onboarding-hold: 1600ms;
+  --onboarding-rail-delay: 60ms; --onboarding-board-delay: 120ms; --onboarding-rail-shift: -8px; --onboarding-board-shift: 6px;
+}
+/* R-D96 / R-D97: shared sidebar and child conversation tokens. R-D134: the rail docks on the board's right edge, rounded on the left only. */
+:root {
+  --work-rail-width: 64px; --work-rail-clear: 92px; --work-rail-radius: 20px;
+  --work-rail-pad: 10px; --work-rail-gap: 8px; --work-avatar: 44px; --work-glyph: 21px;
+  --work-badge: 15px; --work-ring: 42px; --work-popover: 310px; --work-hint-width: 240px;
+  --work-flyout-shadow: 0 12px 40px rgb(32 33 36 / 12%), 0 0 0 1px rgb(32 33 36 / 7%);
+  --work-preview-bar: 44px; --work-preview-spin: 2400ms; --work-reveal-shift: 8px;
+  --work-completion-linger: 6000ms; --work-activity-height: 36px;
+}
+/* R-D97: long rail and AI character identities. */
+:root {
+  --work-rail-top: 76px; --work-rail-bottom: 24px; --work-rail-gap: 12px; --work-rail-pad: 12px;
+  --work-avatar: 40px; --work-face-size: 36px; --work-badge: 13px;
+  --work-avatar-blue: #2f8df6; --work-avatar-brown: #a17442; --work-avatar-red: #f44763;
+  --work-avatar-orange: #fb8b29; --work-avatar-teal: #21b4a4; --work-avatar-eyes: #fff; --work-avatar-ink-eyes: #fff;
+  --work-dialog-height: 660px; --work-dialog-min-height: 320px; --work-dialog-title-height: 64px;
+  --work-dialog-width: var(--agent-width); --work-dialog-inset: var(--xl); --work-dialog-gap: 20px;
+  --work-dialog-scrim: rgb(32 33 36 / 12%);
+}
+
+/* R-D117 / R-D127: the knowledge library page. */
+:root { --library-width: 680px; --library-search: 200px; --library-menu: 176px; --library-editor: 360px; }
+/* R-D126: ended-task results and their receipt. */
+:root { --result-warn: #c96a00; }
+/* R-D169: motion tiers. Surfaces enter and leave in pairs; content swaps fade out briefly before the new view fades in with a short directional shift.
+   Spatial transitions keep --expand / --collapse / --spring / --collapse-curve. */
+:root {
+  --motion-enter: 200ms; --motion-exit: 140ms; --motion-swap-out: 100ms; --motion-swap-in: 180ms;
+  --motion-dialog: 240ms; --motion-dialog-exit: 170ms; --motion-list: 220ms; --motion-list-exit: 160ms;
+  --motion-push-out: 120ms; --motion-push-in: 200ms; --motion-bump: 320ms; --motion-arrival: 1600ms;
+  --motion-shift: 6px; --motion-push: 12px; --motion-slide: 14px; --motion-hint-shift: 4px;
+  --motion-hint-delay: 200ms; --motion-hint-grace: 80ms;
+  --ease-enter: cubic-bezier(.2,.8,.2,1); --ease-exit: cubic-bezier(.4,0,1,1);
+}
+/* R-D169: Agent rail identity and state. The main Agent keeps its own avatar on a raised tile; a ring shows running work, a dashed ring waiting work. */
+:root {
+  --work-dock-gap: 8px; --work-entry-radius: 12px; --work-unread-size: 8px; --work-ring-stroke: 1.75px;
+  --work-ring-spin: 1100ms; --work-ring-wait: var(--option-hover-border); --work-done-opacity: .45;
+  --work-tile-shadow: 0 0 0 1px var(--border), 0 1px 2px rgb(32 33 36 / 6%);
+  --work-selected-shadow: 0 0 0 1px var(--border-strong), 0 2px 8px rgb(32 33 36 / 10%);
+}
+
+/* Dark appearance (design.decisions.md, Appearance). Surfaces get lighter as they rise: page, then lanes and
+   rails, then cards and dialogs. Ink-filled controls and ink avatars invert. Tokens derived from other colors are
+   restated so a .theme-dark subtree (the website's product views) resolves them with the dark values. */
+.theme-dark {
+  color-scheme: dark;
+  --error: #ff6b61;
+  --background: #0f1012; --surface: #151618; --canvas: #1c1d20; --hover: #26272b;
+  --ink: #ecedee; --secondary: #8b9098; --on-ink: #0f1012; --on-color: #fff; --shadow-rgb: 0 0 0;
+  --border: rgb(255 255 255 / 8%); --border-strong: rgb(255 255 255 / 14%);
+  --accent: #4c8dff; --badge: #ff453a;
+  --option-selected: rgb(76 141 255 / 12%); --option-border: rgb(255 255 255 / 11%);
+  --option-hover-border: rgb(255 255 255 / 22%); --option-selected-border: rgb(76 141 255 / 60%);
+  --scrim: rgb(0 0 0 / 50%);
+  --popover-border: rgb(255 255 255 / 10%); --popover-shadow: 0 8px 24px rgb(0 0 0 / 45%);
+  --settings-shadow: 0 24px 64px rgb(0 0 0 / 55%), 0 0 0 .5px rgb(255 255 255 / 12%);
+  --agent-ink: #ecedee; --agent-muted: #8b9098; --agent-border: rgb(255 255 255 / 9%); --agent-hover: #26272b;
+  --agent-surface: #1c1d20; --agent-message-surface: #2a2b2e; --agent-send-color: #ecedee;
+  --agent-composer-border: rgb(255 255 255 / 10%); --agent-placeholder: #6f747c; --agent-send-disabled: #2e2f33;
+  --agent-error: #ff6b61; --agent-error-surface: rgb(255 107 97 / 10%); --agent-code: #232427;
+  --agent-command-border: rgb(255 255 255 / 10%); --agent-command-selected: #2a2b2e; --agent-command-ink: #d8d9db;
+  --agent-command-description: color-mix(in srgb, var(--agent-command-ink) 50%, transparent);
+  --agent-tool-color: color-mix(in srgb, var(--agent-ink) 60%, transparent);
+  --agent-panel-shadow: 0 12px 32px rgb(0 0 0 / 50%), 0 0 0 1px rgb(255 255 255 / 8%);
+  --agent-scroll-shadow: 0 2px 8px rgb(0 0 0 / 40%); --agent-bar-shadow: 0 4px 16px rgb(0 0 0 / 30%);
+  --work-avatar-ink-eyes: #0f1012;
+  --work-flyout-shadow: 0 12px 40px rgb(0 0 0 / 50%), 0 0 0 1px rgb(255 255 255 / 9%);
+  --work-dialog-scrim: rgb(0 0 0 / 40%);
+  --work-ring-wait: var(--option-hover-border);
+  --work-tile-shadow: 0 0 0 1px var(--border);
+  --work-selected-shadow: 0 0 0 1px var(--border-strong), 0 2px 8px rgb(0 0 0 / 40%);
+  --result-warn: #f0a14a;
+}

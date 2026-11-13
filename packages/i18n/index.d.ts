@@ -1,0 +1,15 @@
+import type { i18n } from 'i18next';
+import type english from './locales/en.json';
+export type Language = 'en' | 'zh-Hans' | 'zh-Hant' | 'ja' | 'ko' | 'fr' | 'de' | 'es' | 'pt-BR';
+export type LanguagePreference = Language | 'auto';
+export type MessageKey = keyof typeof english | 'board.decisionCount';
+export type Translator = (key: MessageKey, values?: Record<string, string | number>) => string;
+export const languages: { code: Language; name: string }[];
+export const supportedLanguages: Language[];
+export const catalogs: Record<Language, Record<string, string>>;
+export function matchLanguage(value: unknown): Language | undefined;
+export function isLanguagePreference(value: unknown): value is LanguagePreference;
+export function resolveLanguage(preference?: string, systemLanguages?: string[]): Language;
+export function createI18n(language: Language): i18n;
+export function translator(language: Language): Translator;
+export function errorMessage(error: { code?: string; messageKey?: string; params?: Record<string, string | number> }, language: Language): string;

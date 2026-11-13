@@ -1,0 +1,606 @@
+{
+  "board": {
+    "decisions": [
+      {
+        "createdAt": "2026-10-29T02:34:14Z",
+        "id": "reach-community",
+        "options": [
+          {
+            "detail": "约 1.2 万成员，工具分享区允许介绍产品",
+            "id": "o1",
+            "label": "Shopify 运营者论坛"
+          },
+          {
+            "detail": "成员多但杂，推广内容审核严格",
+            "id": "o2",
+            "label": "r/ecommerce"
+          },
+          {
+            "detail": "需要熟人邀请，进群约 1–2 周",
+            "id": "o3",
+            "label": "独立站卖家微信群"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "reach",
+        "title": "先进入哪个社区？",
+        "updatedAt": "2026-10-29T02:34:14Z",
+        "version": 1,
+        "body": "按“直接接触目标客户”的策略，筛出了 3 个独立站卖家集中的社区。三者的成员构成、活跃度和对推广内容的规则不同，一次只进一个，便于看清效果。"
+      },
+      {
+        "createdAt": "2026-10-29T00:39:14Z",
+        "id": "reach-leads",
+        "options": [
+          {
+            "detail": "需求最明确，便于验证话术",
+            "id": "o1",
+            "label": "先联系这 8 家"
+          },
+          {
+            "detail": "覆盖更广，但很难逐封个性化",
+            "id": "o2",
+            "label": "20 家全部联系"
+          },
+          {
+            "detail": "继续补充名单",
+            "id": "o3",
+            "label": "先不联系"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "reach",
+        "title": "这 20 家潜在客户，先联系哪些？",
+        "updatedAt": "2026-10-29T00:39:14Z",
+        "version": 1,
+        "body": "这 20 家都在近 30 天发布了运营岗位招聘，说明正在扩张。其中 8 家的招聘描述直接提到多店铺库存同步，和产品解决的问题一致。"
+      },
+      {
+        "createdAt": "2026-10-29T02:59:14Z",
+        "excerpt": "Inventory sync across two storefronts is exactly where we kept losing orders. What fixed it for us was treating one store as the source of truth and pushing changes out every few minutes, instead of syncing both ways.",
+        "id": "x-c1",
+        "options": [
+          {
+            "id": "o1",
+            "label": "批准，今晚发"
+          },
+          {
+            "id": "o2",
+            "label": "不发"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "x",
+        "title": "发布回复 C1：回 Shopify 运营那条",
+        "updatedAt": "2026-10-29T02:59:14Z",
+        "version": 1,
+        "body": "原帖作者在问怎样同步两个店铺的库存，是目标客户的典型问题。回复只分享做法，不放链接。"
+      },
+      {
+        "createdAt": "2026-10-29T02:47:14Z",
+        "excerpt": "The tensioner note makes sense: two tensioners per track set by eye could easily leave the sides different. Since it's open source, a short note on how to check both sides match before driving could save other builders the same chase.",
+        "id": "x-m1",
+        "options": [
+          {
+            "id": "o1",
+            "label": "批准，C1 之后发"
+          },
+          {
+            "id": "o2",
+            "label": "不发"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "x",
+        "title": "发布回复 M1：回开源机器人那条",
+        "updatedAt": "2026-10-29T02:47:14Z",
+        "version": 1,
+        "body": "作者在分享开源履带机器人的组装记录。回复是关于张紧器调节的建议，能建立好感，但不直接带来客户。"
+      },
+      {
+        "createdAt": "2026-10-29T02:44:14Z",
+        "excerpt": "Castle joints on a walnut bed are a good test, since the exploded view has to show which way each notch faces. Does the skill check that the cut sheet and the build steps use the same part names?",
+        "id": "x-m2",
+        "options": [
+          {
+            "id": "o1",
+            "label": "明天发"
+          },
+          {
+            "detail": "超出 24 小时 3 条的上限",
+            "id": "o2",
+            "label": "今天发"
+          },
+          {
+            "id": "o3",
+            "label": "不发"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "x",
+        "title": "发布回复 M2：回木工图纸那条",
+        "updatedAt": "2026-10-29T02:44:14Z",
+        "version": 1,
+        "body": "按“24 小时最多 3 条”的策略，今天的额度已经排满。这条和产品的相关度最低，放到明天不影响效果。"
+      },
+      {
+        "createdAt": "2026-10-29T01:39:14Z",
+        "id": "email-address",
+        "options": [
+          {
+            "detail": "立即可用，地址会公开",
+            "id": "o1",
+            "label": "使用公司注册地址"
+          },
+          {
+            "detail": "约 10 美元/月，3 天内开通",
+            "id": "o2",
+            "label": "申请虚拟地址"
+          },
+          {
+            "id": "o3",
+            "label": "暂停邮件方向"
+          }
+        ],
+        "recommendedOptionID": "o2",
+        "status": "active",
+        "strategyID": "email",
+        "title": "提供一个可公开的邮寄地址",
+        "updatedAt": "2026-10-29T01:39:14Z",
+        "version": 1,
+        "body": "按反垃圾邮件法规，商业邮件需要包含真实的邮寄地址，它会出现在每封邮件底部。"
+      },
+      {
+        "createdAt": "2026-10-29T01:34:14Z",
+        "id": "email-dup",
+        "options": [
+          {
+            "detail": "规模更大，招聘信息更新",
+            "id": "o1",
+            "label": "只发 Mercia"
+          },
+          {
+            "id": "o2",
+            "label": "只发 Waltons"
+          },
+          {
+            "id": "o3",
+            "label": "两家都发"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "email",
+        "title": "Mercia 和 Waltons 只发一家？",
+        "updatedAt": "2026-10-29T01:34:14Z",
+        "version": 1,
+        "body": "两家官网使用同一套后台，联系邮箱的域名相同，很可能是同一家公司的两个品牌。两家都发会显得像群发。"
+      },
+      {
+        "createdAt": "2026-10-28T22:39:14Z",
+        "id": "review-reddit",
+        "options": [
+          {
+            "id": "o1",
+            "label": "停止"
+          },
+          {
+            "id": "o2",
+            "label": "再试一周"
+          },
+          {
+            "detail": "目标客户更集中",
+            "id": "o3",
+            "label": "换到 r/shopify 再试"
+          }
+        ],
+        "recommendedOptionID": "o3",
+        "status": "active",
+        "strategyID": "review",
+        "title": "Reddit 试投放是否停止？",
+        "updatedAt": "2026-10-28T22:39:14Z",
+        "version": 1,
+        "body": "10 月 23 日在 r/smallbusiness 发了 3 条帖子，72 小时内共 2 次访问、0 次注册。同期 X 回复带来 11 次访问、1 次注册。"
+      },
+      {
+        "createdAt": "2026-10-22T03:39:14Z",
+        "id": "review-x-posts",
+        "options": [
+          {
+            "id": "o1",
+            "label": "继续"
+          },
+          {
+            "id": "o2",
+            "label": "停止，只回复目标客户的讨论"
+          }
+        ],
+        "outcome": {
+          "acknowledgedAt": "2026-10-22T04:09:14Z",
+          "decidedAt": "2026-10-22T04:09:14Z",
+          "decisionID": "review-x-posts",
+          "decisionVersion": 1,
+          "id": "2D7B2079-3858-4744-9141-8BA7B5560AAF",
+          "note": "发帖效率太低，在 X 上很难找到目标客户。",
+          "optionID": "o2"
+        },
+        "recommendedOptionID": "o2",
+        "status": "active",
+        "strategyID": "review",
+        "title": "是否继续在 X 上发原创帖？",
+        "updatedAt": "2026-10-22T03:39:14Z",
+        "version": 1,
+        "body": "10 月 6 日至 19 日共发 14 条原创帖，平均每条 40 次曝光，带来 3 次访问、0 次注册。"
+      },
+      {
+        "createdAt": "2026-10-29T03:09:14Z",
+        "id": "merge-9",
+        "options": [
+          {
+            "id": "o1",
+            "label": "合并"
+          },
+          {
+            "id": "o2",
+            "label": "暂不合并"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "merge",
+        "title": "合并 PR #9：补充素材校验",
+        "updatedAt": "2026-10-29T03:09:14Z",
+        "version": 1,
+        "body": "上传素材时缺少格式和大小校验，导致两次导出失败。PR #9 补上了校验和错误提示，已通过全部测试。"
+      },
+      {
+        "createdAt": "2026-10-29T01:29:14Z",
+        "id": "merge-8",
+        "options": [
+          {
+            "detail": "用户无感，但发布风险更集中",
+            "id": "o1",
+            "label": "随 v0.4 自动迁移"
+          },
+          {
+            "detail": "多一次发布，风险更小",
+            "id": "o2",
+            "label": "单独发一个迁移版本"
+          },
+          {
+            "detail": "不迁移，代码多一层判断",
+            "id": "o3",
+            "label": "保留旧路径兼容"
+          }
+        ],
+        "recommendedOptionID": "o2",
+        "status": "active",
+        "strategyID": "merge",
+        "title": "PR #8 改了素材路径，旧数据怎么办？",
+        "updatedAt": "2026-10-29T01:29:14Z",
+        "version": 1,
+        "body": "新路径按项目分目录，便于导出。旧路径下的素材如果不处理，这些用户升级后会看不到原来的素材。"
+      },
+      {
+        "createdAt": "2026-10-28T23:39:14Z",
+        "id": "qa-5",
+        "options": [
+          {
+            "detail": "预计半天",
+            "id": "o1",
+            "label": "修复后再验收"
+          },
+          {
+            "detail": "与“必须通过测试验收”的策略冲突",
+            "id": "o2",
+            "label": "放行，记录为已知问题"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "qa",
+        "title": "PR #5 有 1 个用例不稳定，是否放行？",
+        "updatedAt": "2026-10-28T23:39:14Z",
+        "version": 1,
+        "body": "导出用例在模拟慢网络时偶尔超时。其余 212 个用例全部通过。"
+      },
+      {
+        "createdAt": "2026-10-28T21:39:14Z",
+        "id": "plan-next",
+        "options": [
+          {
+            "id": "o1",
+            "label": "先做导出"
+          },
+          {
+            "id": "o2",
+            "label": "先做分享"
+          },
+          {
+            "id": "o3",
+            "label": "都暂缓，先修体验问题"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "plan",
+        "title": "下一步先做导出还是分享？",
+        "updatedAt": "2026-10-28T21:39:14Z",
+        "version": 1,
+        "body": "首轮产品审视访谈了 6 位活跃用户。导出能让用户把结果带进已有工作流，更可能带来持续使用。"
+      },
+      {
+        "createdAt": "2026-10-27T01:39:14Z",
+        "id": "plan-freeze",
+        "options": [
+          {
+            "id": "o1",
+            "label": "冻结，新需求进入 v0.5"
+          },
+          {
+            "id": "o2",
+            "label": "不冻结"
+          }
+        ],
+        "outcome": {
+          "acknowledgedAt": "2026-10-27T03:39:14Z",
+          "decidedAt": "2026-10-27T03:39:14Z",
+          "decisionID": "plan-freeze",
+          "decisionVersion": 1,
+          "id": "814FE821-7FCE-40D1-93C8-3C83FC1C7EFB",
+          "note": "",
+          "optionID": "o1"
+        },
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "plan",
+        "title": "v0.4 范围是否冻结？",
+        "updatedAt": "2026-10-27T01:39:14Z",
+        "version": 1,
+        "body": "v0.4 的 9 项任务已完成 7 项。剩下的 2 个新需求不影响本次发布。"
+      },
+      {
+        "createdAt": "2026-10-28T07:39:14Z",
+        "id": "assets-video",
+        "options": [
+          {
+            "id": "o1",
+            "label": "30 秒版放首图，60 秒版放详情"
+          },
+          {
+            "id": "o2",
+            "label": "只用 60 秒版"
+          }
+        ],
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "assets",
+        "title": "演示视频用 30 秒版还是 60 秒版？",
+        "updatedAt": "2026-10-28T07:39:14Z",
+        "version": 1,
+        "body": "Product Hunt 首图区自动播放、默认静音，短视频更容易看完。60 秒版讲解更完整，适合放在详情里。"
+      },
+      {
+        "createdAt": "2026-10-28T05:39:14Z",
+        "id": "assets-tagline",
+        "options": [
+          {
+            "detail": "讲功能",
+            "id": "o1",
+            "label": "Keep every storefront in sync"
+          },
+          {
+            "detail": "讲结果",
+            "id": "o2",
+            "label": "Stop losing orders between stores"
+          }
+        ],
+        "recommendedOptionID": "o2",
+        "status": "active",
+        "strategyID": "assets",
+        "title": "介绍标题选哪一版？",
+        "updatedAt": "2026-10-28T05:39:14Z",
+        "version": 1,
+        "body": "标题会出现在 Product Hunt 列表和分享卡片上，长度都在 40 个字符以内。"
+      },
+      {
+        "createdAt": "2026-10-27T21:39:14Z",
+        "id": "warmup-email",
+        "options": [
+          {
+            "id": "o1",
+            "label": "发，提前 3 天"
+          },
+          {
+            "id": "o2",
+            "label": "不发"
+          }
+        ],
+        "outcome": {
+          "decidedAt": "2026-10-28T01:39:14Z",
+          "decisionID": "warmup-email",
+          "decisionVersion": 1,
+          "id": "27471B0C-7737-4E4C-9519-E260C3647BC2",
+          "note": "",
+          "optionID": "o1"
+        },
+        "recommendedOptionID": "o1",
+        "status": "active",
+        "strategyID": "warmup",
+        "title": "是否给老用户发预热邮件？",
+        "updatedAt": "2026-10-27T21:39:14Z",
+        "version": 1,
+        "body": "老用户在发布当天的支持对排名影响最大。"
+      }
+    ],
+    "goals": [
+      {
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "growth",
+        "milestone": "11 月 30 日前获得 50 个付费团队",
+        "status": "active",
+        "symbol": "ChartNoAxesCombined",
+        "title": "产品增长",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "constraints": "优先寻找能直接接触到目标客户的渠道，不再广撒网式地发帖。\nX 上的回复任意 24 小时最多 3 条，每条间隔 20 分钟以上。\n邮件只发给有明确需求信号的公司，不群发。"
+      },
+      {
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "build",
+        "milestone": "11 月 15 日发布 v0.4",
+        "status": "active",
+        "symbol": "hammer",
+        "title": "产品研发",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "constraints": "合并前必须通过测试验收，不跳过。\n先做提升留存的功能，新功能往后排。"
+      },
+      {
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "launch",
+        "milestone": "11 月 20 日在 Product Hunt 发布",
+        "status": "active",
+        "symbol": "Send",
+        "title": "v1.0 发布",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "constraints": "发布安排在周二到周四，避开节假日。"
+      }
+    ],
+    "strategies": [
+      {
+        "body": "找到目标客户集中的社区和名单，直接接触",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "reach",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "精准触达",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "growth"
+      },
+      {
+        "body": "只在目标客户的讨论下回复",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "x",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "X 回复",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "growth"
+      },
+      {
+        "body": "给有明确需求的公司写个性化邮件",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "email",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "一对一邮件",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "growth"
+      },
+      {
+        "body": "按 72 小时的真实数据决定继续还是停止",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "review",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "数据复盘",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "growth"
+      },
+      {
+        "body": "合并前需要你确认的改动",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "merge",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "待合并",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "build"
+      },
+      {
+        "body": "发布前的验收结论",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "qa",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "测试验收",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "build"
+      },
+      {
+        "body": "下一阶段先做什么",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "plan",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "产品规划",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "build"
+      },
+      {
+        "body": "演示视频、截图和介绍文案",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "assets",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "发布素材",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "launch"
+      },
+      {
+        "body": "发布前在已有用户中预热",
+        "createdAt": "2026-10-29T03:39:14Z",
+        "id": "warmup",
+        "origin": "由 v0.1 方向迁移",
+        "status": "active",
+        "title": "预热",
+        "updatedAt": "2026-10-29T03:39:14Z",
+        "version": 1,
+        "goalID": "launch"
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "acknowledgedAt": "2026-10-22T04:09:14Z",
+      "decidedAt": "2026-10-22T04:09:14Z",
+      "decisionID": "review-x-posts",
+      "decisionVersion": 1,
+      "id": "2D7B2079-3858-4744-9141-8BA7B5560AAF",
+      "note": "发帖效率太低，在 X 上很难找到目标客户。",
+      "optionID": "o2"
+    },
+    {
+      "acknowledgedAt": "2026-10-27T03:39:14Z",
+      "decidedAt": "2026-10-27T03:39:14Z",
+      "decisionID": "plan-freeze",
+      "decisionVersion": 1,
+      "id": "814FE821-7FCE-40D1-93C8-3C83FC1C7EFB",
+      "note": "",
+      "optionID": "o1"
+    },
+    {
+      "decidedAt": "2026-10-28T01:39:14Z",
+      "decisionID": "warmup-email",
+      "decisionVersion": 1,
+      "id": "27471B0C-7737-4E4C-9519-E260C3647BC2",
+      "note": "",
+      "optionID": "o1"
+    }
+  ]
+}

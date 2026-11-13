@@ -1,0 +1,22 @@
+{
+  "name": "polaris-launch-film",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts ResolveLaunch out/polaris-launch-v2.mp4",
+    "render:all": "python3 scripts/render.py",
+    "audio": "python3 scripts/make-launch-audio.py",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "remotion": "4.0.539",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.9",
+    "@types/react-dom": "19.1.9",
+    "typescript": "5.9.3"
+  }
+}

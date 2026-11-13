@@ -1,0 +1,31 @@
+# Design decisions
+
+This is the effective design contract; it records only what is in effect, not earlier alternatives. Visual values live in [theme.css](desktop/src/theme.css); behavior is specified in [interaction.md](interaction.md).
+
+| Area | Current decision |
+| --- | --- |
+| Product value | Help people analyze goals, compare strategies, choose a direction and carry it through to results. |
+| Platform and brand | Polaris, using the existing Polaris app mark. Electron, React, a local service and SQLite. |
+| Main Agent | Answer the immediate request, then actively guide goal selection, constraints and at least three distinct strategies. Offer candidates and a recommendation, ask one concrete next question, and save only adopted choices. Respect a deliberate choice of fewer strategies or a request to stop planning. Execution belongs to background tasks. |
+| Planning boundary | Capability questions and introductions to a project or situation can lead into planning. Confirmed-card handoffs and run verification stay within their stated task. Goals can concern any domain. |
+| Default workspace | Open the board when a goal exists. Without goals, show full-window main chat. Keep the main Agent first in the right rail, separated from background entries. |
+| Avatars | Use the approved 20 Open Bot Avatar designs. The main Agent uses the first; background tasks use stable selections from the rest. |
+| Tool icons | Use the installed Lucide icons for activity categories. Keep their existing 16 px layout and monochrome styling. Do not ship glyphs extracted from proprietary clients. |
+| Cards | One card format for facts, choices, approval and user actions. Ask one direct question; retain only facts and consequences that affect the choice. Internal input bindings remain for Agents. |
+| Directional advice | Ordinary cards in the relevant strategy column may propose changes to the goal, constraints or strategies. |
+| Confirmation | Record the user's choice, then let the main Agent apply accepted changes and delegate remaining work. No executable plan edits inside cards and no withdrawal after confirmation. |
+| Strategy records | Columns show pending cards or their current state. The strategy-title dialog contains only the strategy body and confirmed decision history, newest first. History opens read-only. |
+| Constraints | Persistent pale tags under the goal milestone, split by source paragraphs. Overflow goes into a +N menu. Opening a tag shows that paragraph. |
+| Automatic cards | Every active strategy prepares up to three supported decisions when its column becomes empty. No opt-in or off switch. One round per empty cycle, after decision handoff. Ordinary execution may run concurrently. |
+| Execution | Saving a strategy and authorizing execution are distinct. Complete work that can be done now, ask through cards when needed, and schedule time-dependent work separately. |
+| Manual continuation | A stopped strategy or one with only future work offers Continue. This starts current work without replacing its schedule. |
+| Scheduled tasks | Independent named tasks; multiple tasks per strategy. One-time and recurring work share the same scheduling path. Recovery runs only the latest missed occurrence. |
+| Completion and retry | Finished background entries and their open details disappear automatically. Cards and records remain. Failed or uncertain runs retain recovery. A single Retry entry handles supported interruptions; uncertain effects are checked before more work. |
+| Model settings | Reuse the chat model selector. Show the background model directly below the main model, following it by default or selecting independently. No advanced-settings disclosure. |
+| Appearance | The desktop supports a dark theme alongside the current light one, and the website shows the dark app on its dark page; the user found the white app on the black site odd (2026-11-13). The user approved the palette and entry (2026-11-13): elevation gets lighter from page to lane to card; ink-filled controls and ink avatars invert; Settings → General offers System, Light and Dark, defaulting to System and applying at once. |
+| Distribution | Prebuilt, signed and notarized macOS apps for Apple silicon and Intel are published as GitHub Releases on version tags, and the website and README link to the latest release; building from source stays documented (user, 2026-11-13). Both architectures and the 0.1.0 starting version are agent defaults the user has not contested. |
+| Local workspace | No Polaris account gate. Connect existing native Agent accounts and preserve workspace data on upgrade. |
+| Language | English source documentation and AI instructions. Nine localized UI catalogs, with English as their development baseline. Business content keeps the user's language; tool activity stays English. |
+| Website | Informational pages only; no account endpoints. The landing page follows the user's Linear reference (2026-11-12): a near-black page, large tightly tracked headlines and hairline-divided feature groups. Product views show the app in its dark appearance, flat and front-facing at a readable size; the user rejected the 3D tilt as unnecessary and hard to read, and current Linear, Cursor, Conductor and Zed pages show flat product windows too. No decorative entrance or reveal motion. The FAQ (free, current version, supported clients, platforms, updating, closed-window behavior) was accepted on 2026-11-13; the rest of the agent-drafted copy awaits user review. |
+
+The open-source cleanup changes documentation, names and licensed icon sources. It does not change planning, execution permissions, automatic card preparation or scheduling behavior. Database upgrades and historical imports must preserve user records.

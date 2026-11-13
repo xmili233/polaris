@@ -1,0 +1,508 @@
+{
+  "note": "Fictional demo content for the open-source launch film. Stages are written in order by scripts/capture-launch.mjs into an isolated database.",
+  "goals": [
+    {
+      "id": "customers",
+      "symbol": "ChartNoAxesCombined",
+      "title": "Find my first 10 customers",
+      "milestone": "By January 31: ten customers using it every week.",
+      "constraints": "No paid ads.\n\nLearn from real conversations first.",
+      "strategies": [
+        {
+          "id": "conversations",
+          "title": "Customer conversations",
+          "body": "Interview potential users and compare their needs.",
+          "decisions": [
+            {
+              "id": "audience",
+              "title": "Who should we interview first?",
+              "body": "Pick one audience for our first five conversations.\n\nWe can interview **five people** this week.\n\n- Solo founders reply faster and can buy on their own.\n- Small product teams show where shared decisions slow down.\n\nStarting with one audience keeps the answers comparable.",
+              "options": [
+                {
+                  "id": "solo",
+                  "label": "Solo founders",
+                  "detail": "Start with people who can try and buy on their own."
+                },
+                {
+                  "id": "teams",
+                  "label": "Small product teams",
+                  "detail": "Learn where shared workflows create friction."
+                }
+              ],
+              "recommendedOptionID": "solo"
+            },
+            {
+              "id": "problem",
+              "title": "Which problem should we explore first?",
+              "body": "Focus the interviews on one recurring pain.",
+              "options": [
+                {
+                  "id": "track",
+                  "label": "Keeping agents on track"
+                },
+                {
+                  "id": "review",
+                  "label": "Reviewing agent output"
+                }
+              ],
+              "recommendedOptionID": "track"
+            },
+            {
+              "id": "invitation",
+              "title": "Is this interview invitation ready to send?",
+              "body": "Review the message before we contact anyone.",
+              "options": [
+                {
+                  "id": "send",
+                  "label": "Send this invitation"
+                },
+                {
+                  "id": "revise",
+                  "label": "Revise the opening"
+                }
+              ],
+              "recommendedOptionID": "send"
+            },
+            {
+              "id": "feedback",
+              "title": "Which feedback should we validate next?",
+              "body": "Choose the strongest signal for a follow-up.",
+              "options": [
+                {
+                  "id": "backforth",
+                  "label": "Too much back-and-forth"
+                },
+                {
+                  "id": "compare",
+                  "label": "Hard to compare choices"
+                }
+              ],
+              "recommendedOptionID": "backforth"
+            }
+          ]
+        },
+        {
+          "id": "public",
+          "title": "Build in public",
+          "body": "Test the message through posts and demos.",
+          "decisions": [
+            {
+              "id": "angle",
+              "title": "Which angle should our first post lead with?",
+              "body": "Choose the idea readers should remember.",
+              "options": [
+                {
+                  "id": "time",
+                  "label": "More time for decisions"
+                },
+                {
+                  "id": "moving",
+                  "label": "Goals that keep moving"
+                }
+              ],
+              "recommendedOptionID": "time"
+            },
+            {
+              "id": "demo",
+              "title": "Which product moment should the demo show?",
+              "body": "Keep the first clip focused on one useful moment.",
+              "options": [
+                {
+                  "id": "parallel",
+                  "label": "Strategies in parallel"
+                },
+                {
+                  "id": "decision",
+                  "label": "One clear decision"
+                }
+              ],
+              "recommendedOptionID": "decision"
+            },
+            {
+              "id": "teaser",
+              "title": "Is this launch teaser ready to publish?",
+              "body": "Review the draft and product footage together.",
+              "options": [
+                {
+                  "id": "publish",
+                  "label": "Publish the teaser"
+                },
+                {
+                  "id": "refine",
+                  "label": "Refine the ending"
+                }
+              ],
+              "recommendedOptionID": "publish"
+            },
+            {
+              "id": "followup",
+              "title": "Which reader question needs a follow-up?",
+              "body": "Pick the next topic for a concrete example.",
+              "options": [
+                {
+                  "id": "working",
+                  "label": "How agents keep working"
+                },
+                {
+                  "id": "handback",
+                  "label": "How decisions come back"
+                }
+              ],
+              "recommendedOptionID": "handback"
+            }
+          ]
+        },
+        {
+          "id": "offer",
+          "title": "Validate the offer",
+          "body": "Learn what people would sign up and pay for.",
+          "decisions": [
+            {
+              "id": "promise",
+              "title": "Which promise should lead the landing page?",
+              "body": "Choose the clearest reason to try it.",
+              "options": [
+                {
+                  "id": "deciding",
+                  "label": "Less managing, more deciding"
+                },
+                {
+                  "id": "forward",
+                  "label": "Your goals, moving forward"
+                }
+              ],
+              "recommendedOptionID": "deciding"
+            },
+            {
+              "id": "access",
+              "title": "What should early access include?",
+              "body": "Choose the first offer we can deliver well.",
+              "options": [
+                {
+                  "id": "guided",
+                  "label": "A guided first goal"
+                },
+                {
+                  "id": "trial",
+                  "label": "A self-serve trial"
+                }
+              ],
+              "recommendedOptionID": "guided"
+            },
+            {
+              "id": "onboarding",
+              "title": "Who should onboarding focus on?",
+              "body": "Focus the first experience on one familiar use case.",
+              "options": [
+                {
+                  "id": "builders",
+                  "label": "Independent builders"
+                },
+                {
+                  "id": "teams",
+                  "label": "Small product teams"
+                }
+              ],
+              "recommendedOptionID": "builders"
+            },
+            {
+              "id": "intent",
+              "title": "What should count as buying intent?",
+              "body": "Agree on the signal before comparing results.",
+              "options": [
+                {
+                  "id": "pilot",
+                  "label": "A paid pilot"
+                },
+                {
+                  "id": "call",
+                  "label": "A scheduled setup call"
+                }
+              ],
+              "recommendedOptionID": "pilot"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "symbol": "GraduationCap",
+      "title": "Hold a 10-minute conversation in Japanese",
+      "milestone": "By June 30: talk with a native speaker without switching to English.",
+      "constraints": "Up to 30 minutes on weekdays.\n\nPractice speaking more than reading.",
+      "strategies": [
+        {
+          "id": "speaking",
+          "title": "Daily speaking practice",
+          "body": "Speak out loud every weekday, even for five minutes.",
+          "decisions": [
+            {
+              "id": "speaking-format",
+              "title": "Which practice fits your weekday mornings?",
+              "body": "You have 20 minutes before work.",
+              "options": [
+                {
+                  "id": "shadowing",
+                  "label": "Shadow a short podcast"
+                },
+                {
+                  "id": "partner",
+                  "label": "Talk with an AI partner"
+                }
+              ],
+              "recommendedOptionID": "shadowing"
+            },
+            {
+              "id": "topics",
+              "title": "Start with travel or everyday topics?",
+              "body": "Your first conversation partner lives in Osaka.",
+              "options": [
+                {
+                  "id": "everyday",
+                  "label": "Everyday life"
+                },
+                {
+                  "id": "travel",
+                  "label": "Travel phrases"
+                }
+              ],
+              "recommendedOptionID": "everyday"
+            }
+          ]
+        },
+        {
+          "id": "tutor",
+          "title": "Weekly tutor sessions",
+          "body": "One live conversation with a tutor every week.",
+          "decisions": [
+            {
+              "id": "tutor-pick",
+              "title": "Which tutor should we book first?",
+              "body": "Both have openings next week.",
+              "options": [
+                {
+                  "id": "evenings",
+                  "label": "Evening tutor, casual talk"
+                },
+                {
+                  "id": "weekends",
+                  "label": "Weekend tutor, structured lessons"
+                }
+              ],
+              "recommendedOptionID": "evenings"
+            }
+          ]
+        },
+        {
+          "id": "listening",
+          "title": "Learn from shows you enjoy",
+          "body": "Pick up natural phrases from podcasts and dramas.",
+          "decisions": [
+            {
+              "id": "commute",
+              "title": "Which podcast should replace your commute playlist?",
+              "body": "Both use everyday spoken Japanese.",
+              "options": [
+                {
+                  "id": "slow",
+                  "label": "A slow-paced daily podcast"
+                },
+                {
+                  "id": "interviews",
+                  "label": "A weekly interview show"
+                }
+              ],
+              "recommendedOptionID": "slow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "halfmarathon",
+      "symbol": "Heart",
+      "title": "Run my first half marathon",
+      "milestone": "By April 12: finish the Riverside Half.",
+      "constraints": "Run at most four days a week.\n\nProtect my knees.",
+      "strategies": [
+        {
+          "id": "mileage",
+          "title": "Build weekly mileage",
+          "body": "Add distance gradually with one long run each week.",
+          "decisions": [
+            {
+              "id": "plan",
+              "title": "Which training plan fits your schedule?",
+              "body": "Race day is 21 weeks away.",
+              "options": [
+                {
+                  "id": "sixteen",
+                  "label": "16-week beginner plan"
+                },
+                {
+                  "id": "twelve",
+                  "label": "12-week compressed plan"
+                }
+              ],
+              "recommendedOptionID": "sixteen"
+            },
+            {
+              "id": "longrun",
+              "title": "Long run on Saturday or Sunday?",
+              "body": "Pick the day you can protect most weeks.",
+              "options": [
+                {
+                  "id": "saturday",
+                  "label": "Saturday morning"
+                },
+                {
+                  "id": "sunday",
+                  "label": "Sunday morning"
+                }
+              ],
+              "recommendedOptionID": "saturday"
+            }
+          ]
+        },
+        {
+          "id": "strength",
+          "title": "Strength and mobility",
+          "body": "Two short sessions a week to protect your knees.",
+          "decisions": [
+            {
+              "id": "routine",
+              "title": "Which strength routine should we start with?",
+              "body": "Both take 20 minutes and need no gym.",
+              "options": [
+                {
+                  "id": "knees",
+                  "label": "Knee-focused routine"
+                },
+                {
+                  "id": "core",
+                  "label": "Full-body routine"
+                }
+              ],
+              "recommendedOptionID": "knees"
+            }
+          ]
+        },
+        {
+          "id": "raceday",
+          "title": "Race-day plan",
+          "body": "Pace, fuel and gear decided ahead of time.",
+          "decisions": [
+            {
+              "id": "register",
+              "title": "Register at the early-bird price now?",
+              "body": "The early-bird price ends Friday.",
+              "options": [
+                {
+                  "id": "now",
+                  "label": "Register now"
+                },
+                {
+                  "id": "wait",
+                  "label": "Wait until week 4"
+                }
+              ],
+              "recommendedOptionID": "now"
+            },
+            {
+              "id": "shoes",
+              "title": "Which shoes should you train in?",
+              "body": "Your current pair has about 500 km on it.",
+              "options": [
+                {
+                  "id": "cushioned",
+                  "label": "A cushioned daily trainer"
+                },
+                {
+                  "id": "current",
+                  "label": "Keep the current pair"
+                }
+              ],
+              "recommendedOptionID": "cushioned"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "suggestion": {
+    "id": "communities-suggestion",
+    "strategyID": "conversations",
+    "title": "Add a strategy for founder communities?",
+    "body": "I studied how 12 indie products found their first 10 customers.\n\n- 8 got their first customers from founder communities.\n- What worked: sharing a short demo and asking for feedback.\n\nA strategy there would bring people to us, beyond one-to-one outreach.\n\nFirst step: pick three active communities and draft one intro post.",
+    "options": [
+      {
+        "id": "add",
+        "label": "Add Founder communities",
+        "detail": "Share the demo where solo founders ask for feedback."
+      },
+      {
+        "id": "later",
+        "label": "Not now",
+        "detail": "Keep the current three strategies."
+      }
+    ],
+    "recommendedOptionID": "add"
+  },
+  "newStrategy": {
+    "id": "communities",
+    "goalID": "customers",
+    "title": "Founder communities",
+    "body": "Share the demo where solo founders ask for feedback.",
+    "decisions": [
+      {
+        "id": "community",
+        "title": "Which community should we start with?",
+        "body": "Two communities match our first audience.",
+        "options": [
+          {
+            "id": "forum",
+            "label": "A solo-founder forum"
+          },
+          {
+            "id": "meetup",
+            "label": "A weekly builder meetup"
+          }
+        ],
+        "recommendedOptionID": "forum"
+      },
+      {
+        "id": "lead",
+        "title": "Lead with a demo or a question?",
+        "body": "Members respond best to concrete posts.",
+        "options": [
+          {
+            "id": "demo",
+            "label": "Lead with a 30-second demo"
+          },
+          {
+            "id": "question",
+            "label": "Ask how they make decisions"
+          }
+        ],
+        "recommendedOptionID": "demo"
+      },
+      {
+        "id": "intro",
+        "title": "Is this intro post ready to publish?",
+        "body": "Review the draft before it goes live.",
+        "options": [
+          {
+            "id": "publish",
+            "label": "Publish the post"
+          },
+          {
+            "id": "shorten",
+            "label": "Shorten the opening"
+          }
+        ],
+        "recommendedOptionID": "publish"
+      }
+    ]
+  }
+}

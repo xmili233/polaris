@@ -1,0 +1,90 @@
+name: Release
+
+# Pushing a tag such as v0.1.0 requires that commit to have passed Verify, then builds signed and notarized DMGs for Apple silicon and Intel,
+# and publishes them with SHA256SUMS as a GitHub Release. The website links to releases/latest/download.
+# A manual run does the same build without publishing, to check credentials.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: macos-15
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - uses: pnpm/action-setup@v6
+      - run: pnpm install --frozen-lockfile
+      - name: Check the tag matches the app version
+        if: github.ref_type == 'tag'
+        run: |
+          version="v$(node -p "require('./desktop/package.json').version")"
+          test "$GITHUB_REF_NAME" = "$version" || { echo "Tag $GITHUB_REF_NAME does not match $version"; exit 1; }
+      # The Verify workflow already ran the full suite on this commit; requiring its success avoids paying for it twice.
+      - name: Require a passing Verify run for this commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          passed=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow verify.yml --commit "$GITHUB_SHA" --json conclusion --jq 'map(select(.conclusion == "success")) | length')
+          test "$passed" -gt 0 || { echo "Verify has not passed for $GITHUB_SHA. Push the commit to main and wait for Verify first."; exit 1; }
+      - run: pnpm test
+      - name: Import the Developer ID certificate into a temporary keychain
+        env:
+          MACOS_CERTIFICATE_P12: ${{ secrets.MACOS_CERTIFICATE_P12 }}
+          MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+        run: |
+          keychain="$RUNNER_TEMP/polaris-signing.keychain-db"
+          password="$(openssl rand -base64 24)"
+          security create-keychain -p "$password" "$keychain"
+          security set-keychain-settings -lut 21600 "$keychain"
+          security unlock-keychain -p "$password" "$keychain"
+          printf '%s' "$MACOS_CERTIFICATE_P12" | base64 --decode > "$RUNNER_TEMP/certificate.p12"
+          security import "$RUNNER_TEMP/certificate.p12" -P "$MACOS_CERTIFICATE_PASSWORD" -f pkcs12 -k "$keychain" -T /usr/bin/codesign
+          rm "$RUNNER_TEMP/certificate.p12"
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$password" "$keychain" > /dev/null
+          security list-keychains -d user -s "$keychain" $(security list-keychains -d user | tr -d '"')
+      - name: Build, sign and notarize
+        env:
+          POLARIS_SIGN_IDENTITY: ${{ secrets.MACOS_SIGN_IDENTITY }}
+          # Notarization uses an App Store Connect API key when present, otherwise an Apple ID app-specific password.
+          APPLE_API_KEY_P8: ${{ secrets.APPLE_API_KEY_P8 }}
+          POLARIS_NOTARY_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
+          POLARIS_NOTARY_ISSUER: ${{ secrets.APPLE_API_ISSUER_ID }}
+          POLARIS_NOTARY_APPLE_ID: ${{ secrets.APPLE_ID }}
+          POLARIS_NOTARY_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          POLARIS_NOTARY_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+        run: |
+          if [ -n "$APPLE_API_KEY_P8" ]; then
+            export POLARIS_NOTARY_KEY="$RUNNER_TEMP/AuthKey.p8"
+            printf '%s' "$APPLE_API_KEY_P8" > "$POLARIS_NOTARY_KEY"
+          fi
+          tag=(); if [ "$GITHUB_REF_TYPE" = tag ]; then tag=(--tag "$GITHUB_REF_NAME"); fi
+          node desktop/scripts/release.mjs "${tag[@]}"
+      - name: Publish the GitHub Release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" macos/release/Polaris-macOS-arm64.dmg macos/release/Polaris-macOS-x64.dmg macos/release/SHA256SUMS \
+            --repo "$GITHUB_REPOSITORY" --verify-tag --title "Polaris ${GITHUB_REF_NAME#v}" --generate-notes
+      - name: Remove signing material
+        if: always()
+        run: |
+          security delete-keychain "$RUNNER_TEMP/polaris-signing.keychain-db" 2>/dev/null || true
+          rm -f "$RUNNER_TEMP/AuthKey.p8" "$RUNNER_TEMP/certificate.p12"
