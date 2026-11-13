@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ArrowRight } from 'lucide-react';
 import { getT } from '../i18n';
 import { LanguageSelect } from './LanguageSelect';
 import { links } from './links';
@@ -25,7 +26,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
       <nav>
         <a href={links.guide}>{t('web.nav.guide')}</a>
         <LanguageSelect language={lng} label={t('settings.language')} />
-        <a className="button small" href={links.repository}>GitHub</a>
+        <a className="button small" href={links.repository}>GitHub<ArrowRight aria-hidden="true" /></a>
       </nav>
     </div></header>
     <main>{children}</main>

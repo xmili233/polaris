@@ -62,6 +62,8 @@ The landing page uses a near-black canvas with light text, following the user's 
 
 Product views show the app in its dark appearance, using the desktop's dark tokens through `body.theme-dark`. They are built from the shared desktop tokens rather than screenshots so all nine languages render natively; demo content is fictional and matches the launch film. Views sit flat and front-facing, sized so their text stays readable, and may be cropped with a fade into the page instead of a hard edge. Do not tilt them in perspective or darken them with overlays. Tool activity stays English.
 
+The header sits transparently on the page with no divider and scrolls away with it. It holds the brand, the guide link, a round ghost globe button whose native menu lists the languages, and the GitHub pill; narrow screens drop the guide link. Buttons are pills with press feedback; an arrow inside one moves slightly on hover where a fine pointer exists and motion is allowed.
+
 The primary action downloads the Apple silicon build; a line beneath states the requirement and links the Intel build by name, because browsers cannot tell the two apart. Building from source is secondary. Use the platform font stack. Web-only colors, type scale and page dimensions live in `web/app/theme.css`. Motion only explains product behavior: running Agents show their progress arc, and the preparing column shows its cards arriving while it scrolls into view where the browser supports scroll-driven animation. No decorative entrance or reveal motion. Reduced motion keeps the final state. On narrow screens, product views crop rather than shrink below legibility.
 
 ## Motion

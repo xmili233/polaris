@@ -1,5 +1,5 @@
 * { box-sizing: border-box; }
-html { color-scheme: dark; background: var(--web-canvas); scroll-padding-top: var(--web-header); }
+html { color-scheme: dark; background: var(--web-canvas); }
 body {
   margin: 0; overflow-x: clip; background: var(--web-canvas); color: var(--web-text);
   font: var(--web-body)/1.6 var(--web-font); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
@@ -10,24 +10,25 @@ a { color: inherit; text-decoration: none; }
 h1, h2, h3, p, ul { margin: 0; }
 .wrap { width: 100%; max-width: calc(var(--web-content) + 2 * var(--web-gutter)); margin-inline: auto; padding-inline: var(--web-gutter); }
 
-/* Header and footer */
-.site-header {
-  position: sticky; top: 0; z-index: 10; height: var(--web-header);
-  background: rgb(8 9 10 / 72%); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--web-line);
-}
+/* Header and footer. The header is transparent and scrolls away with the page (design.decisions.md, Website). */
+.site-header { height: var(--web-header); }
 .site-header .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; letter-spacing: var(--web-tracking); }
 .mark { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; background: #fff; }
-.site-header nav { display: flex; align-items: center; gap: 20px; font-size: 14px; color: var(--web-secondary); }
-.site-header nav > a:not(.button) { transition: color var(--press) ease; }
+.site-header .brand { font-size: 19px; letter-spacing: -.03em; }
+.site-header .mark { width: 26px; height: 26px; border-radius: 7px; }
+.site-header .mark img { width: 16px; height: 16px; }
+.site-header nav { display: flex; align-items: center; gap: 16px; font-size: 14px; color: var(--web-secondary); }
+.site-header nav > a:not(.button) { padding-inline: 4px; transition: color var(--press) ease; }
 .site-header nav > a:not(.button):hover { color: var(--web-text); }
-.site-header select {
-  appearance: none; max-width: 160px; height: 32px; padding: 0 28px 0 10px; border: 1px solid var(--web-line-strong); border-radius: var(--web-radius-button);
-  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%238a8f98' stroke-width='1.5'%3E%3Cpath d='m3 4.5 3 3 3-3'/%3E%3C/svg%3E") no-repeat right 10px center;
-  color: var(--web-secondary); font: inherit; font-size: 13px; cursor: pointer;
+.language-select {
+  position: relative; display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 50%;
+  color: var(--web-secondary); transition: background-color var(--press) ease, color var(--press) ease;
 }
-.site-header select:hover { color: var(--web-text); border-color: var(--web-secondary); }
+.language-select:hover { background: var(--web-ghost-hover); color: var(--web-text); }
+.language-select:has(select:focus-visible) { outline: 2px solid var(--web-focus); outline-offset: 2px; }
+.language-select svg { width: 18px; height: 18px; }
+.language-select select { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; border-radius: 50%; appearance: none; opacity: 0; font-size: 16px; cursor: pointer; }
 .site-footer { border-top: 1px solid var(--web-line); padding-block: 40px 56px; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 14px; color: var(--web-secondary); }
@@ -36,11 +37,13 @@ h1, h2, h3, p, ul { margin: 0; }
 /* Actions */
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 36px; }
 .button {
-  display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: var(--web-radius-button);
-  background: var(--web-button); color: var(--web-button-text); font-size: 15px; font-weight: 500; transition: background var(--press) ease;
+  display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 22px; border-radius: var(--web-radius-button);
+  background: var(--web-button); color: var(--web-button-text); font-size: 15px; font-weight: 600; white-space: nowrap;
+  transition: background-color var(--press) ease, transform var(--press) var(--ease-enter);
 }
 .button:hover { background: var(--web-button-hover); }
-.button.small { height: 32px; padding: 0 12px; font-size: 13px; }
+.button svg { width: 16px; height: 16px; flex: none; transition: transform var(--press) var(--ease-enter); }
+.button.small { height: 40px; padding: 0 18px; font-size: 14px; }
 .text-link { display: inline-flex; align-items: center; gap: 2px; font-size: 15px; font-weight: 500; color: var(--web-text); }
 .text-link svg { width: 16px; height: 16px; color: var(--web-secondary); transition: transform var(--press) ease, color var(--press) ease; }
 .text-link:hover svg { transform: translateX(2px); color: var(--web-text); }
@@ -163,6 +166,10 @@ h1, h2, h3, p, ul { margin: 0; }
 /* Motion: only behavior the product has (see mock.css) */
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
+  .button:active { transform: scale(.98); }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .button:hover svg { transform: translateX(3px); }
 }
 
 @media (max-width: 960px) {
@@ -181,8 +188,11 @@ h1, h2, h3, p, ul { margin: 0; }
   .suggest-view { -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 96%), linear-gradient(to right, #000 80%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, #000 55%, transparent 96%), linear-gradient(to right, #000 80%, transparent); mask-composite: intersect; }
 }
 @media (max-width: 560px) {
+  :root { --web-header: 64px; }
   .site-header nav > a:not(.button) { display: none; }
-  .site-header nav { gap: 12px; }
+  .site-header nav { gap: 8px; }
+  .site-header .brand { font-size: 18px; }
+  .site-header .button.small { height: 36px; padding: 0 14px; font-size: 13px; }
   .features { grid-template-columns: minmax(0, 1fr); }
   .faq details > p { padding-right: 0; }
   .hero-view, .stack-view { aspect-ratio: auto; height: 360px; margin-inline: 0; }

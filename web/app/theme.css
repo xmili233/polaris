@@ -4,7 +4,7 @@
   --web-canvas: #08090a; --web-band: #0f1011;
   --web-text: #f7f8f8; --web-secondary: #8a8f98; --web-tertiary: #62666d;
   --web-line: rgb(255 255 255 / 8%); --web-line-strong: rgb(255 255 255 / 14%);
-  --web-button: #e6e6e6; --web-button-hover: #fff; --web-button-text: #08090a;
+  --web-button: #e6e6e6; --web-button-hover: #fff; --web-button-text: #08090a; --web-ghost-hover: rgb(255 255 255 / 8%);
   --web-focus: #4d8dff;
   --web-code: #0d0e0f;
 
@@ -15,6 +15,6 @@
   --web-lead: clamp(17px, 1.6vw, 20px); --web-body: 15px; --web-small: 13px;
   --web-tracking-tight: -.032em; --web-tracking: -.012em;
 
-  --web-content: 1180px; --web-gutter: clamp(20px, 4vw, 40px); --web-header: 64px;
-  --web-section: clamp(88px, 12vw, 152px); --web-radius-button: 8px;
+  --web-content: 1180px; --web-gutter: clamp(20px, 4vw, 40px); --web-header: 80px;
+  --web-section: clamp(88px, 12vw, 152px); --web-radius-button: 999px;
 }
