@@ -84,6 +84,16 @@ Then run `POLARIS_SIGN_IDENTITY="Developer ID Application: Name (TEAMID)" POLARI
 | Notarization status is `Invalid` | The script prints Apple's notarization log; fix the reported binary or entitlement and release again. |
 | Signing cannot find the identity | Check that `MACOS_SIGN_IDENTITY` matches the certificate name and that `MACOS_CERTIFICATE_P12` holds that identity with its private key. |
 
+## Website
+
+The website in `web/` is deployed by Vercel (Hobby plan, project `polaris`) at [polarisboards.com](https://polarisboards.com). The project builds from the repository with root directory `web`, framework Next.js and Node.js 24, and may read files outside `web/` (it imports desktop theme tokens, avatars and the app version). Every push to `main` deploys to production; other branches get preview URLs. Nothing is deployed by hand.
+
+The domain is registered with Cloudflare, which also serves its DNS. The apex has `A` records `216.198.79.1` and `64.29.17.1`, and `www` is a `CNAME` to `ca8276d877593bfc.vercel-dns-017.com`; all three stay DNS only (grey cloud), because Vercel issues the certificates. Vercel redirects `www.polarisboards.com` to `polarisboards.com` with a 308. If Vercel reports a domain as misconfigured, compare these records with `vercel domains verify polarisboards.com`.
+
+The website has no server state or secrets. Language detection lives in `web/proxy.ts`, and `pnpm --filter polaris-web test:i18n` covers it before a change reaches `main`.
+
+The privacy policy and terms name the operator and the contact address `hello@polarisboards.com`, both set in `web/app/legal.tsx`; update the date there whenever the legal text changes. Cloudflare Email Routing forwards that address to the operator's private inbox, which must not appear in the repository. Its MX, SPF and DKIM records are managed by Email Routing; change the destination in the Cloudflare dashboard, not in the site.
+
 ## Language and data
 
 - Maintain English source documentation, prompts, tool instructions and raw service diagnostics.
