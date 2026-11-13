@@ -162,6 +162,8 @@ h1, h2, h3, p, ul { margin: 0; }
 .prose h2 { margin-top: 40px; font-size: 18px; font-weight: 500; }
 .prose p { margin-top: 12px; color: var(--web-secondary); line-height: 1.75; }
 .prose .notice { margin-top: 20px; color: var(--web-tertiary); font-size: var(--web-small); }
+.prose p a { color: var(--web-text); text-decoration: underline; text-decoration-color: var(--web-line-strong); text-underline-offset: 3px; }
+.prose p a:hover { text-decoration-color: currentColor; }
 
 /* Motion: only behavior the product has (see mock.css) */
 @media (prefers-reduced-motion: no-preference) {

@@ -40,10 +40,13 @@ try {
     const html = await response.text();
     assert.ok(html.includes(`<html lang="${code}"`), `${code}: HTML language`);
     for (const key of ['web.download.mac', 'web.decide.title', 'web.demo.goalCustomers', 'board.decide', 'web.faq.freeQ']) assert.ok(html.includes(translator(code)(key)), `${code}: translated ${key}`);
-    const privacy = await request(`/${code}/privacy`); assert.equal(privacy.status, 200);
-    assert.ok((await privacy.text()).includes(translator(code)('web.localTitle')));
-    const terms = await request(`/${code}/terms`); assert.equal(terms.status, 200);
-    assert.ok((await terms.text()).includes(translator(code)('web.scopeTitle')));
+    // Legal pages name the operator and link the forwarding address in every language.
+    for (const [path, title] of [['privacy', 'web.localTitle'], ['terms', 'web.scopeTitle']]) {
+      const page = await request(`/${code}/${path}`); assert.equal(page.status, 200);
+      const text = await page.text();
+      assert.ok(text.includes(translator(code)(title)), `${code}: ${path} translated`);
+      assert.ok(text.includes('Zane') && text.includes('href="mailto:hello@polarisboards.com"'), `${code}: ${path} contact`);
+    }
   }));
   const legacy = await request('/privacy', { 'Accept-Language': 'ja' });
   assert.equal(new URL(legacy.headers.get('location'), origin).pathname, '/ja/privacy');
